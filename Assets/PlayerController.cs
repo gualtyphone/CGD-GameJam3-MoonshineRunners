@@ -2,24 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+enum MotionState
+{
+	jumping,
+	grounded,
+	falling
+}
+
 public class PlayerController : MonoBehaviour {
 
     [SerializeField]
     Vector2 velocity;
     [SerializeField]
     Vector2 acceleration;
-
     [SerializeField]
-    bool grounded;
+	MotionState motionSate;
+	[SerializeField]
+	MotionState previousMotionState;
 
 	[SerializeField]
 	float jumpForce;
-
-	bool jumping;
+	[SerializeField]
+	float moveForce;
 
 	[SerializeField]
 	float jumpMaxTime;
 	float jumpTime;
+
+	bool doubleJump = false;
 
     Rigidbody2D rb;
 	ContactPoint2D[] cps;
@@ -35,13 +45,15 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		jumpTime += Time.deltaTime;
-		grounded = isGrounded ();
-		acceleration = new Vector2 (Input.GetAxisRaw ("Horizontal"), 0);
+		isGrounded ();
+		acceleration = new Vector2 (Input.GetAxisRaw ("Horizontal"), 0) * moveForce;
         acceleration.y = calculateVerticalAcceleration();
 
         velocity += acceleration * Time.deltaTime;
 
-		if (grounded) {
+		velocity -= velocity * rb.drag;
+
+		if (motionSate == MotionState.grounded) {
 			velocity.y = 0.0f;
 		}
 
@@ -53,33 +65,41 @@ public class PlayerController : MonoBehaviour {
 		LayerMask mask = new LayerMask ();
 		mask.value = 1 << LayerMask.NameToLayer ("Platforms");
 		filter.SetLayerMask (mask);
-		return (rb.GetContacts (filter, cps) > 0);
+		if (rb.GetContacts (filter, cps) > 0 && motionSate == MotionState.falling) {
+			motionSate = MotionState.grounded;
+			previousMotionState = MotionState.falling;
+			return true;
+		}
+		return false;
 	}
 
     float calculateVerticalAcceleration()
     {
-        if (grounded)
-        {
-			if (Input.GetButtonDown ("Jump")) {
-				jumping = true;
-				grounded = false;
-				jumpTime = 0;
+		if (motionSate == MotionState.grounded || previousMotionState == MotionState.grounded) {
+			if (Input.GetButton("Jump")) {
+				previousMotionState = motionSate;
+				motionSate = MotionState.jumping;
+				//if (Input.GetButtonDown("Jump")){
+					if (motionSate == MotionState.jumping && !doubleJump) {
+						doubleJump = true;
+						velocity.y = jumpForce * 2.0f;
+						jumpTime = 0;
+					}
+				//}
+				return jumpForce;
+			}
+		}
+		if (motionSate == MotionState.jumping) {
+			if (Input.GetButton ("Jump") && jumpTime < jumpMaxTime) {
 				return jumpForce;
 			} else {
-				jumping = false;
+				previousMotionState = motionSate;
+				motionSate = MotionState.falling;
 			}
-            return 0;
-        }
-        else
-        {
-			if (jumping) {
-				if (Input.GetButton ("Jump") && jumpTime < jumpMaxTime) {
-					return jumpForce;
-				} else {
-					jumping = false;
-				}
-			}
-            return -rb.gravityScale;
-        }
+		} 
+		if (motionSate == MotionState.falling) {
+			return -rb.gravityScale;
+		}
+			return 0;
     }
 }
