@@ -29,6 +29,9 @@ class Inputs
 public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
+	int playerNumber = 0;
+
+	[SerializeField]
 	[Range(0.0f, 45.0f)]
 	float drunknessLevel;
 
@@ -69,6 +72,10 @@ public class PlayerController : MonoBehaviour {
 		filter = new ContactFilter2D ();
 		contacts = new List<ContactSides> ();
 		inputs = new List<Inputs> ();
+
+		//testing drunkness
+		//drunknessLevel = Random.Range (0.0f, 45.0f);
+
 	}
 
 	Inputs getDelayedinput(int framesDelay = 0)
@@ -79,9 +86,9 @@ public class PlayerController : MonoBehaviour {
 	void recordInput()
 	{
 		Inputs input = new Inputs ();
-		input.axes = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));	
-		input.jump = Input.GetButton ("Jump");
-		input.jumpDown = Input.GetButtonDown ("Jump");
+		input.axes = new Vector2 (Input.GetAxisRaw ("Horizontal" + playerNumber), Input.GetAxisRaw ("Vertical" + playerNumber));	
+		input.jump = Input.GetButton ("Jump" + playerNumber);
+		input.jumpDown = Input.GetButtonDown ("Jump" + playerNumber);
 
 		inputs.Add(input);
 		if (inputs.Count > 200) {
