@@ -31,17 +31,17 @@ public class ScrollingBackground : MonoBehaviour {
 			rightIndex = layers.Length - 1;
 		}
 
-		zPos = new Vector3 (-1.3f, 0.0f, -2.0f);
+		//zPos = new Vector3 (-2.0f, 0.0f, -2.0f);
 	}
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		if (parallax) 
 		{
 			float deltaX = cameraTransform.position.x - lastCameraX;
 
 			if (gameObject.tag == "tree") {
-				transform.position += zPos * (deltaX * parallaxSpeed);
+				transform.position += Vector3.right * (deltaX * parallaxSpeed);
 			} 
 			else 
 			{
@@ -64,8 +64,10 @@ public class ScrollingBackground : MonoBehaviour {
 
 	private void ScrollLeft()
 	{
-		int lastRight = rightIndex;
-		layers [rightIndex].position = Vector3.right * (layers [leftIndex].position.x - backgroundSize); //Gets position of the most left image, and minuses the backgroundsize
+		Vector3 a = Vector3.right;
+		float b = (layers [leftIndex].localPosition.x - backgroundSize);
+		Vector3 c = b * a;
+		layers [rightIndex].localPosition = c; //Gets position of the most left image, and minuses the backgroundsize
 		leftIndex = rightIndex;
 		rightIndex--;
 		if (rightIndex < 0) 
@@ -76,8 +78,11 @@ public class ScrollingBackground : MonoBehaviour {
 
 	private void ScrollRight()
 	{
-		int lastLeft = leftIndex;
-		layers [leftIndex].position = Vector3.right * (layers [rightIndex].position.x + backgroundSize); //Gets position of the most left image, and minuses the backgroundsize
+        Vector3 a = Vector3.right;
+		float b = (layers[rightIndex].localPosition.x + backgroundSize);
+        Vector3 c = a * b;
+
+        layers[leftIndex].localPosition = c ; //Gets position of the most left image, and minuses the backgroundsize
 		rightIndex = leftIndex;
 		leftIndex++;
 		if (leftIndex == layers.Length) 

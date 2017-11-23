@@ -42,8 +42,8 @@ public class CameraPathCode : MonoBehaviour {
 		
 		float speed = speedMultiplier * Time.deltaTime; 
 
-		if (x.transform.position.x < transform.position.x + 3)
-			speed /= speedMultiplier; 
+		//if (x.transform.position.x < transform.position.x + 3)
+		//	speed /= speedMultiplier; 
 
 		if (currentNode.transform.position.x > transform.position.x - 2 && currentNode.transform.position.x < transform.position.x + 2 &&
 		    currentNode.transform.position.y > transform.position.y - 2 && currentNode.transform.position.y < transform.position.y + 2)
