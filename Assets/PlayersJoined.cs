@@ -1,30 +1,59 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayersJoined : MonoBehaviour {
 
+    [SerializeField]
     List<int> playersJoined;
-    List<int> playersReady;
+    [SerializeField]
+    public List<int> playersReady;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (playersJoined.Count >= 2)
-		foreach(var id in playersJoined)
+    bool countdownRunning = false;
+    Timer timer;
+
+    // Use this for initialization
+    void Awake () {
+        DontDestroyOnLoad(gameObject);
+        playersJoined = new List<int>();
+        playersReady = new List<int>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            if (!playersReady.Contains(id))
+            if (playersJoined.Count >= 2)
             {
-                return;
+                foreach (var id in playersJoined)
+                {
+                    if (!playersReady.Contains(id))
+                    {
+                        //stop and reset countdown
+                        countdownRunning = false;
+                        return;
+                    }
+                }
+                if (!countdownRunning)//countdown not running
+                {
+                    //startCountdown
+                    countdownRunning = true;
+                    timer = new Timer(3.0f);
+                }
+                if (timer.Trigger())
+                {
+                    SceneManager.LoadScene(3);
+                }
             }
         }
 
-        //startCountdown
-	}
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+
+        }
+    }
 
     public void join(int playerId)
     {
@@ -49,4 +78,6 @@ public class PlayersJoined : MonoBehaviour {
             playersReady.Remove(playerId);
         }
     }
+
+
 }

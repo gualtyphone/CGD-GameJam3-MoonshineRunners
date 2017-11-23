@@ -29,7 +29,7 @@ class Inputs
 public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
-	int playerNumber = 0;
+	public int playerNumber = 0;
 
     public bool alive = true;
 
