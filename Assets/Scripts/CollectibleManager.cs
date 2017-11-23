@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Sprites;
 
+enum CollectibleType
+{
+	Beer,
+	Cocktail
+}
+
 public class CollectibleManager : MonoBehaviour {
-
-
-	public GameObject playerChar;
+	
 	public Sprite beer;
 	public Sprite cocktail;
 
@@ -30,16 +34,16 @@ public class CollectibleManager : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Player")
+		if (col.gameObject.tag == "Player")
         {
 			if (this.gameObject.tag == "Beer Collectible")
             {
-                beerCollectible();
+				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 5.0f);
             }
 
 			if (this.gameObject.tag == "Cocktail Collectible")
             {
-                cocktailCollectible();
+				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 10.0f);
             }
         }
         else
@@ -48,14 +52,9 @@ public class CollectibleManager : MonoBehaviour {
         }   
     }
 
-    void beerCollectible()
+	void IncreasePlayerDrunkness(PlayerController player, float drunknessAmount)
     {
-		playerChar.GetComponent<PlayerController> ().drunknessLevel += 5.0f;
-    }
-
-    void cocktailCollectible()
-    {
-		playerChar.GetComponent<PlayerController> ().drunknessLevel += 10.0f;
+		player.GetComponent<PlayerController> ().drunknessLevel += drunknessAmount;
     }
 
 };
