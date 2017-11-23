@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
 	[Range(0.0f, 45.0f)]
-	float drunknessLevel;
+	public float drunknessLevel;
 
 	List<Inputs> inputs;
 
