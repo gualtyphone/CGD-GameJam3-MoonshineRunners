@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class Sound {
@@ -39,47 +41,52 @@ public class AudioManager : MonoBehaviour
 	public static AudioManager instance;
 
 	[SerializeField]
-	Sound[] sounds;
+	List<Sound> sounds;
 
-	void Awake()
+    void Awake()
+    {
+        if (instance != null)
+        {
+            if (instance == this)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+
+    }
+
+    void Start()
 	{
-		if (instance != null) 
-		{
-			if (instance == this) 
-			{
-				Destroy (this.gameObject);
-			}
-		} 
-		else 
-		{
-			instance = this;
-			DontDestroyOnLoad (this);
-		}
-
-	}
-
-	void Start()
-	{
-		for (int i = 0; i < sounds.Length; i++) 
+		for (int i = 0; i < sounds.Count; i++) 
 		{
 			GameObject _go = new GameObject ("Sound_" + i + "_" + sounds [i].name);
 			_go.transform.SetParent (this.transform);
 			sounds [i].setSource (_go.AddComponent<AudioSource>());
 		}
+
+		//PlaySound ("Background Music");
+
 	}
 
 	public void PlaySound(string _name)
 	{
-		for (int i = 0; i < sounds.Length; i++) 
-		{
-			if (sounds [i].name == _name) 
-			{
-				sounds [i].Play ();
-				return;
-			}
-		}
+        Sound found = sounds.Find(sound => sound.name == _name);
+        found.Play();
+		//for (int i = 0; i < sounds.Length; i++) 
+		//{
+		//	if (sounds [i].name == _name) 
+		//	{
+		//		sounds [i].Play ();
+		//		return;
+		//	}
+		//}
 
 		//error 404 sound not found
-		Debug.LogWarning ("AudioManager: Sound not found in list: " + _name);
+		//Debug.LogWarning ("AudioManager: Sound not found in list: " + _name);
 	}
 }
