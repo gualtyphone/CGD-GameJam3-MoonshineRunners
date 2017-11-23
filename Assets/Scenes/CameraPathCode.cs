@@ -28,6 +28,8 @@ public class CameraPathCode : MonoBehaviour {
 		foreach(GameObject x in players)
 			averageYpos += x.transform.position.y;
 
+		averageYpos /= players.Length + 1;
+
 		if (averageYpos > transform.position.y + 1)
 			pushUp (); 
 		if (averageYpos < transform.position.y - 2)

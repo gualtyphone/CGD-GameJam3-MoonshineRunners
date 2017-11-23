@@ -10,20 +10,22 @@ enum CollectibleType
 }
 
 public class CollectibleManager : MonoBehaviour {
-	
+
+	[SerializeField]
+	CollectibleType type;
+
 	public Sprite beer;
 	public Sprite cocktail;
 
 	// Use this for initialization
 	void Start () {
 
-		if (this.gameObject.tag == "Beer Collectible") {
+		if (type == CollectibleType.Beer) {
 			this.GetComponent<SpriteRenderer> ().sprite = beer;
 		}
-		else if (this.gameObject.tag == "Cocktail Collectible") {
+		else if (type == CollectibleType.Cocktail) {
 			this.GetComponent<SpriteRenderer> ().sprite = cocktail;
 		}
-
 
 	}
 	
@@ -36,12 +38,12 @@ public class CollectibleManager : MonoBehaviour {
     {
 		if (col.gameObject.tag == "Player")
         {
-			if (this.gameObject.tag == "Beer Collectible")
+			if (type == CollectibleType.Beer)
             {
 				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 5.0f);
             }
 
-			if (this.gameObject.tag == "Cocktail Collectible")
+			if (type == CollectibleType.Cocktail)
             {
 				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 10.0f);
             }
