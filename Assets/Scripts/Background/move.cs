@@ -15,8 +15,8 @@ public class move : MonoBehaviour {
 
 	void Update ()
 	{
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
+		float moveHorizontal = Input.GetAxis ("Horizontal0");
+		float moveVertical = Input.GetAxis ("Vertical0");
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
