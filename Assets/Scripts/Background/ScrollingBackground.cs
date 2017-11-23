@@ -16,12 +16,10 @@ public class ScrollingBackground : MonoBehaviour {
 
 	public float parallaxSpeed;
 	private float lastCameraX;
-
-
+	Vector3 zPos;
 
 	private void Start()
 	{
-		
 		cameraTransform = Camera.main.transform;
 		lastCameraX = cameraTransform.position.x;
 		layers = new Transform[transform.childCount];
@@ -32,6 +30,8 @@ public class ScrollingBackground : MonoBehaviour {
 			leftIndex = 0;
 			rightIndex = layers.Length - 1;
 		}
+
+		zPos = new Vector3 (-1.3f, 0.0f, -2.0f);
 	}
 
 	private void Update()
@@ -39,13 +39,20 @@ public class ScrollingBackground : MonoBehaviour {
 		if (parallax) 
 		{
 			float deltaX = cameraTransform.position.x - lastCameraX;
-			transform.position += Vector3.right * (deltaX * parallaxSpeed);
+
+			if (gameObject.tag == "tree") {
+				transform.position += zPos * (deltaX * parallaxSpeed);
+			} 
+			else 
+			{
+				transform.position += Vector3.right * (deltaX * parallaxSpeed);
+			}
 		}
 		lastCameraX = cameraTransform.position.x;
 
 		if (scrolling) 
 		{
-			if (cameraTransform.position.x < (layers [leftIndex].transform.position.x + viewZone)) { //If camera position is less than the left most image, scroll left
+			if (cameraTransform.position.x < (layers [leftIndex].transform.position.x + viewZone)) {//If camera position is less than the left most image, scroll left
 				ScrollLeft ();
 			}
 
@@ -77,6 +84,5 @@ public class ScrollingBackground : MonoBehaviour {
 		{
 			leftIndex = 0;
 		}
-
 	}
 }
