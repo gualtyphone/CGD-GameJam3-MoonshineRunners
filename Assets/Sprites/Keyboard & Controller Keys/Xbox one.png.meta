@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 3453919d882e784468d316e3e85e09cd
-timeCreated: 1511444146
-licenseType: Pro
+timeCreated: 1511459536
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Xbox one_0
@@ -91,6 +91,10 @@ TextureImporter:
     21300168: Xbox one_84
     21300170: Xbox one_85
     21300172: Xbox one_86
+    21300174: Xbox one_87
+    21300176: Xbox one_88
+    21300178: Xbox one_89
+    21300180: Xbox one_90
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -161,1773 +165,1183 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
-      tessellationDetail: 1
+      outline: []
+      tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 7}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_2
       rect:
         serializedVersion: 2
         x: 48
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 8}
-        - {x: -8, y: 5}
-        - {x: -8, y: -5}
-        - {x: -5, y: -8}
-        - {x: 4, y: -8}
-        - {x: 7, y: -5}
-        - {x: 7, y: 5}
-        - {x: 4, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_3
       rect:
         serializedVersion: 2
         x: 64
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 8}
-        - {x: -8, y: 5}
-        - {x: -8, y: -5}
-        - {x: -5, y: -8}
-        - {x: 4, y: -8}
-        - {x: 7, y: -5}
-        - {x: 7, y: 5}
-        - {x: 4, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_4
       rect:
         serializedVersion: 2
         x: 80
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 8}
-        - {x: -8, y: 5}
-        - {x: -8, y: -5}
-        - {x: -5, y: -8}
-        - {x: 4, y: -8}
-        - {x: 7, y: -5}
-        - {x: 7, y: 5}
-        - {x: 4, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_5
       rect:
         serializedVersion: 2
         x: 160
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 8}
-        - {x: -2, y: 8}
-        - {x: -7, y: 5}
-        - {x: -8, y: 2}
-        - {x: -8, y: -3}
-        - {x: -5, y: -8}
-        - {x: 5, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_6
       rect:
         serializedVersion: 2
         x: 176
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 7}
-        - {x: -8, y: 3}
-        - {x: -8, y: -5}
-        - {x: -4, y: -8}
-        - {x: 5, y: -8}
-        - {x: 8, y: -5}
-        - {x: 8, y: 4}
-        - {x: 7, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_7
       rect:
         serializedVersion: 2
         x: 208
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 6}
-        - {x: -6, y: 5}
-        - {x: -6, y: -4}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 7, y: -4}
-        - {x: 7, y: 3}
-        - {x: 6, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_8
       rect:
         serializedVersion: 2
         x: 224
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 6}
-        - {x: -6, y: 5}
-        - {x: -6, y: -4}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 7, y: -4}
-        - {x: 7, y: 3}
-        - {x: 6, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_9
       rect:
         serializedVersion: 2
         x: 240
-        y: 288
+        y: 289
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 6}
-        - {x: -6, y: 5}
-        - {x: -6, y: -4}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 7, y: -4}
-        - {x: 7, y: 3}
-        - {x: 6, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_10
       rect:
         serializedVersion: 2
         x: 48
-        y: 272
+        y: 273
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 7}
-        - {x: -8, y: 4}
-        - {x: -8, y: -5}
-        - {x: -5, y: -8}
-        - {x: 4, y: -8}
-        - {x: 7, y: -5}
-        - {x: 7, y: 4}
-        - {x: 4, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_11
       rect:
         serializedVersion: 2
         x: 64
-        y: 272
+        y: 273
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 7}
-        - {x: -8, y: 4}
-        - {x: -8, y: -5}
-        - {x: -5, y: -8}
-        - {x: 4, y: -8}
-        - {x: 7, y: -5}
-        - {x: 7, y: 4}
-        - {x: 4, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_12
       rect:
         serializedVersion: 2
         x: 80
-        y: 272
+        y: 273
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 7}
-        - {x: -8, y: 4}
-        - {x: -8, y: -5}
-        - {x: -5, y: -8}
-        - {x: 4, y: -8}
-        - {x: 7, y: -5}
-        - {x: 7, y: 4}
-        - {x: 4, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_13
       rect:
         serializedVersion: 2
         x: 208
-        y: 272
+        y: 273
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 5}
-        - {x: -5, y: 5}
-        - {x: -6, y: 2}
-        - {x: -6, y: -4}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 7, y: -4}
-        - {x: 7, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_14
       rect:
         serializedVersion: 2
         x: 224
-        y: 272
+        y: 273
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 5}
-        - {x: -5, y: 5}
-        - {x: -6, y: 2}
-        - {x: -6, y: -4}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 7, y: -4}
-        - {x: 7, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_15
       rect:
         serializedVersion: 2
         x: 240
-        y: 272
+        y: 273
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 5}
-        - {x: -5, y: 5}
-        - {x: -6, y: 2}
-        - {x: -6, y: -4}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 7, y: -4}
-        - {x: 7, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_16
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 257
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_17
       rect:
         serializedVersion: 2
         x: 16
-        y: 256
+        y: 257
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 7}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_18
       rect:
         serializedVersion: 2
         x: 160
-        y: 256
+        y: 257
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 8}
-        - {x: -2, y: 8}
-        - {x: -7, y: 5}
-        - {x: -8, y: 2}
-        - {x: -8, y: -3}
-        - {x: -5, y: -8}
-        - {x: 5, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_19
       rect:
         serializedVersion: 2
         x: 176
-        y: 256
+        y: 257
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 7}
-        - {x: -8, y: 3}
-        - {x: -8, y: -5}
-        - {x: -4, y: -8}
-        - {x: 5, y: -8}
-        - {x: 8, y: -5}
-        - {x: 8, y: 4}
-        - {x: 7, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_20
       rect:
         serializedVersion: 2
         x: 48
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_21
       rect:
         serializedVersion: 2
         x: 64
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_22
       rect:
         serializedVersion: 2
         x: 80
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_23
       rect:
         serializedVersion: 2
         x: 96
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_24
       rect:
         serializedVersion: 2
         x: 112
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_25
       rect:
         serializedVersion: 2
         x: 208
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 3}
-        - {x: -8, y: -6}
-        - {x: -4, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 5}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_26
       rect:
         serializedVersion: 2
         x: 224
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 3}
-        - {x: -8, y: -6}
-        - {x: -4, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 5}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_27
       rect:
         serializedVersion: 2
         x: 240
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 3}
-        - {x: -8, y: -6}
-        - {x: -4, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 5}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_28
       rect:
         serializedVersion: 2
         x: 256
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 3}
-        - {x: -8, y: -6}
-        - {x: -4, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 5}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_29
       rect:
         serializedVersion: 2
         x: 272
-        y: 240
+        y: 241
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 3}
-        - {x: -8, y: -6}
-        - {x: -4, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 5}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_30
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
+        y: 225
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_31
       rect:
         serializedVersion: 2
         x: 16
-        y: 224
+        y: 225
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 7}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_32
       rect:
         serializedVersion: 2
         x: 160
-        y: 224
+        y: 225
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 8}
-        - {x: -2, y: 8}
-        - {x: -7, y: 5}
-        - {x: -8, y: 2}
-        - {x: -8, y: -3}
-        - {x: -5, y: -8}
-        - {x: 5, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_33
       rect:
         serializedVersion: 2
         x: 176
-        y: 224
+        y: 225
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 7}
-        - {x: -8, y: 3}
-        - {x: -8, y: -5}
-        - {x: -4, y: -8}
-        - {x: 5, y: -8}
-        - {x: 8, y: -5}
-        - {x: 8, y: 4}
-        - {x: 7, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_34
       rect:
         serializedVersion: 2
         x: 48
-        y: 208
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 7}
-        - {x: -8, y: 3}
-        - {x: -8, y: -7}
-        - {x: -7, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 5}
-        - {x: 5, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_35
       rect:
         serializedVersion: 2
         x: 64
-        y: 208
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_36
       rect:
         serializedVersion: 2
         x: 80
-        y: 208
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_37
       rect:
         serializedVersion: 2
         x: 96
-        y: 208
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 3}
-        - {x: 7, y: 7}
-        - {x: -4, y: 7}
-        - {x: -8, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_38
       rect:
         serializedVersion: 2
-        x: 128
-        y: 208
+        x: 112
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -4}
-        - {x: -5, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -7}
-        - {x: 8, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_39
       rect:
         serializedVersion: 2
-        x: 144
-        y: 208
+        x: 128
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -4}
-        - {x: -5, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -7}
-        - {x: 8, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_40
       rect:
         serializedVersion: 2
-        x: 224
-        y: 208
+        x: 144
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 6}
-        - {x: -4, y: 6}
-        - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -7}
-        - {x: 8, y: 3}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_41
       rect:
         serializedVersion: 2
-        x: 240
-        y: 208
+        x: 224
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 8}
-        - {x: -2, y: 8}
-        - {x: -5, y: 7}
-        - {x: -8, y: 5}
-        - {x: -8, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -7}
-        - {x: 8, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_42
       rect:
         serializedVersion: 2
-        x: 256
-        y: 208
+        x: 240
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 8}
-        - {x: -8, y: 4}
-        - {x: -8, y: -7}
-        - {x: -7, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 6}
-        - {x: 5, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_43
       rect:
         serializedVersion: 2
-        x: 272
-        y: 208
+        x: 256
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 6}
-        - {x: -8, y: 2}
-        - {x: -8, y: -7}
-        - {x: -7, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 5}
-        - {x: 4, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_44
       rect:
         serializedVersion: 2
-        x: 288
-        y: 208
+        x: 272
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -7, y: 6}
-        - {x: -8, y: 3}
-        - {x: -8, y: -5}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -7}
-        - {x: 8, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_45
       rect:
         serializedVersion: 2
-        x: 304
-        y: 208
+        x: 288
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -7, y: 6}
-        - {x: -8, y: 3}
-        - {x: -8, y: -5}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -7}
-        - {x: 8, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_46
       rect:
         serializedVersion: 2
-        x: 0
-        y: 192
+        x: 304
+        y: 209
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 8}
-        - {x: -8, y: 6}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 6}
-        - {x: 6, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_47
       rect:
         serializedVersion: 2
-        x: 16
-        y: 192
+        x: 0
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -6}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 7}
-        - {x: 7, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_48
       rect:
         serializedVersion: 2
-        x: 48
-        y: 192
+        x: 16
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 7}
-        - {x: -8, y: 5}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_49
       rect:
         serializedVersion: 2
-        x: 64
-        y: 192
+        x: 48
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 8}
-        - {x: -8, y: 5}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_50
       rect:
         serializedVersion: 2
-        x: 80
-        y: 192
+        x: 64
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 8}
-        - {x: -7, y: 8}
-        - {x: -8, y: 7}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
-        - {x: 6, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_51
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
+        x: 80
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: -8}
-        - {x: 8, y: 7}
-        - {x: -8, y: 7}
-        - {x: -8, y: -8}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_52
       rect:
         serializedVersion: 2
-        x: 160
-        y: 192
+        x: 96
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 8}
-        - {x: -2, y: 8}
-        - {x: -7, y: 5}
-        - {x: -8, y: 2}
-        - {x: -8, y: -3}
-        - {x: -5, y: -8}
-        - {x: 5, y: -8}
-        - {x: 8, y: -6}
-        - {x: 8, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_53
       rect:
         serializedVersion: 2
-        x: 176
-        y: 192
+        x: 128
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 7}
-        - {x: -8, y: 3}
-        - {x: -8, y: -5}
-        - {x: -4, y: -8}
-        - {x: 5, y: -8}
-        - {x: 8, y: -5}
-        - {x: 8, y: 4}
-        - {x: 7, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_54
       rect:
         serializedVersion: 2
-        x: 224
-        y: 192
+        x: 160
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 5}
-        - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_55
       rect:
         serializedVersion: 2
-        x: 240
-        y: 192
+        x: 176
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 6}
-        - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -7}
-        - {x: 8, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_56
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
+        x: 224
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 6}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 3}
-        - {x: 4, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_57
       rect:
         serializedVersion: 2
-        x: 272
-        y: 192
+        x: 240
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 5}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
-        - {x: 5, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_58
       rect:
         serializedVersion: 2
-        x: 0
-        y: 160
+        x: 256
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 6}
-        - {x: -7, y: 5}
-        - {x: -7, y: -3}
-        - {x: -3, y: -7}
-        - {x: 5, y: -7}
-        - {x: 6, y: -3}
-        - {x: 6, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_59
       rect:
         serializedVersion: 2
-        x: 16
-        y: 160
+        x: 272
+        y: 193
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 5}
-        - {x: -7, y: 4}
-        - {x: -7, y: -3}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 6, y: -3}
-        - {x: 6, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_60
       rect:
         serializedVersion: 2
-        x: 48
-        y: 160
+        x: 128
+        y: 177
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 5}
-        - {x: -7, y: 2}
-        - {x: -7, y: -5}
-        - {x: -4, y: -8}
-        - {x: 3, y: -8}
-        - {x: 6, y: -5}
-        - {x: 6, y: 2}
-        - {x: 3, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_61
       rect:
         serializedVersion: 2
-        x: 64
-        y: 160
+        x: 0
+        y: 161
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 5}
-        - {x: -7, y: 2}
-        - {x: -7, y: -5}
-        - {x: -4, y: -8}
-        - {x: 3, y: -8}
-        - {x: 6, y: -5}
-        - {x: 6, y: 2}
-        - {x: 3, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_62
       rect:
         serializedVersion: 2
-        x: 80
-        y: 160
+        x: 16
+        y: 161
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 5}
-        - {x: -7, y: 2}
-        - {x: -7, y: -5}
-        - {x: -4, y: -8}
-        - {x: 3, y: -8}
-        - {x: 6, y: -5}
-        - {x: 6, y: 2}
-        - {x: 3, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_63
       rect:
         serializedVersion: 2
         x: 48
-        y: 144
+        y: 161
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 4}
-        - {x: -7, y: 1}
-        - {x: -7, y: -5}
-        - {x: -4, y: -8}
-        - {x: 3, y: -8}
-        - {x: 6, y: -5}
-        - {x: 6, y: 1}
-        - {x: 3, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_64
       rect:
         serializedVersion: 2
         x: 64
-        y: 144
+        y: 161
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 4}
-        - {x: -7, y: 1}
-        - {x: -7, y: -5}
-        - {x: -4, y: -8}
-        - {x: 3, y: -8}
-        - {x: 6, y: -5}
-        - {x: 6, y: 1}
-        - {x: 3, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_65
       rect:
         serializedVersion: 2
         x: 80
-        y: 144
+        y: 161
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 4}
-        - {x: -7, y: 1}
-        - {x: -7, y: -5}
-        - {x: -4, y: -8}
-        - {x: 3, y: -8}
-        - {x: 6, y: -5}
-        - {x: 6, y: 1}
-        - {x: 3, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_66
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 128
+        y: 161
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 6}
-        - {x: -7, y: 5}
-        - {x: -7, y: -3}
-        - {x: -3, y: -7}
-        - {x: 5, y: -7}
-        - {x: 6, y: -3}
-        - {x: 6, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_67
       rect:
         serializedVersion: 2
-        x: 16
-        y: 128
+        x: 48
+        y: 145
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 5}
-        - {x: -7, y: 4}
-        - {x: -7, y: -3}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 6, y: -3}
-        - {x: 6, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_68
       rect:
         serializedVersion: 2
-        x: 48
-        y: 112
+        x: 64
+        y: 145
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 7}
-        - {x: -7, y: 2}
-        - {x: -7, y: -4}
-        - {x: -4, y: -6}
-        - {x: -1, y: -7}
-        - {x: 3, y: -7}
-        - {x: 7, y: -6}
-        - {x: 7, y: 2}
-        - {x: 6, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_69
       rect:
         serializedVersion: 2
-        x: 64
-        y: 112
+        x: 80
+        y: 145
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 7}
-        - {x: -7, y: 2}
-        - {x: -7, y: -4}
-        - {x: -4, y: -6}
-        - {x: -1, y: -7}
-        - {x: 3, y: -7}
-        - {x: 7, y: -6}
-        - {x: 7, y: 2}
-        - {x: 6, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_70
       rect:
         serializedVersion: 2
-        x: 80
-        y: 112
+        x: 0
+        y: 129
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -2, y: 7}
-        - {x: -6, y: 2}
-        - {x: -6, y: -4}
-        - {x: -3, y: -6}
-        - {x: 0, y: -7}
-        - {x: 4, y: -7}
-        - {x: 8, y: -6}
-        - {x: 8, y: 2}
-        - {x: 7, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_71
       rect:
         serializedVersion: 2
-        x: 96
-        y: 112
+        x: 16
+        y: 129
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 7}
-        - {x: -7, y: 2}
-        - {x: -7, y: -4}
-        - {x: -4, y: -6}
-        - {x: -1, y: -7}
-        - {x: 3, y: -7}
-        - {x: 7, y: -6}
-        - {x: 7, y: 2}
-        - {x: 6, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_72
       rect:
         serializedVersion: 2
-        x: 112
-        y: 112
+        x: 48
+        y: 113
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 7}
-        - {x: -7, y: 2}
-        - {x: -7, y: -4}
-        - {x: -4, y: -6}
-        - {x: -1, y: -7}
-        - {x: 3, y: -7}
-        - {x: 7, y: -6}
-        - {x: 7, y: 2}
-        - {x: 6, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_73
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 64
+        y: 113
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 6}
-        - {x: -7, y: 5}
-        - {x: -7, y: -3}
-        - {x: -3, y: -7}
-        - {x: 5, y: -7}
-        - {x: 6, y: -3}
-        - {x: 6, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_74
       rect:
         serializedVersion: 2
-        x: 16
-        y: 96
+        x: 80
+        y: 113
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 5}
-        - {x: -7, y: 4}
-        - {x: -7, y: -3}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 6, y: -3}
-        - {x: 6, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_75
       rect:
         serializedVersion: 2
-        x: 48
-        y: 80
+        x: 96
+        y: 113
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 4}
-        - {x: -7, y: 2}
-        - {x: -7, y: -7}
-        - {x: -6, y: -8}
-        - {x: 7, y: -8}
-        - {x: 7, y: 0}
-        - {x: 6, y: 4}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_76
       rect:
         serializedVersion: 2
-        x: 64
-        y: 80
+        x: 112
+        y: 113
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 6}
-        - {x: -7, y: 4}
-        - {x: -7, y: -7}
-        - {x: -6, y: -8}
-        - {x: 7, y: -8}
-        - {x: 7, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_77
       rect:
         serializedVersion: 2
-        x: 80
-        y: 80
+        x: 0
+        y: 97
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 6}
-        - {x: -7, y: 2}
-        - {x: -7, y: -7}
-        - {x: -6, y: -8}
-        - {x: 6, y: -8}
-        - {x: 7, y: -7}
-        - {x: 7, y: 1}
-        - {x: 2, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_78
       rect:
         serializedVersion: 2
-        x: 96
-        y: 80
+        x: 16
+        y: 97
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: -8}
-        - {x: 7, y: -8}
-        - {x: 7, y: 1}
-        - {x: 6, y: 4}
-        - {x: -3, y: 4}
-        - {x: -7, y: 2}
-        - {x: -7, y: -7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_79
       rect:
         serializedVersion: 2
-        x: 128
-        y: 80
+        x: 48
+        y: 81
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 7}
-        - {x: -8, y: 5}
-        - {x: -8, y: -3}
-        - {x: -4, y: -8}
-        - {x: 4, y: -8}
-        - {x: 7, y: -5}
-        - {x: 7, y: 2}
-        - {x: 6, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_80
       rect:
         serializedVersion: 2
-        x: 144
-        y: 80
+        x: 64
+        y: 81
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 7}
-        - {x: -8, y: 5}
-        - {x: -8, y: -3}
-        - {x: -4, y: -8}
-        - {x: 4, y: -8}
-        - {x: 7, y: -5}
-        - {x: 7, y: 2}
-        - {x: 6, y: 7}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_81
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 80
+        y: 81
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 6}
-        - {x: -7, y: 5}
-        - {x: -7, y: -3}
-        - {x: -3, y: -7}
-        - {x: 5, y: -7}
-        - {x: 6, y: -3}
-        - {x: 6, y: 6}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_82
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
+        x: 96
+        y: 81
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 5}
-        - {x: -7, y: 4}
-        - {x: -7, y: -3}
-        - {x: -3, y: -7}
-        - {x: 4, y: -7}
-        - {x: 6, y: -3}
-        - {x: 6, y: 5}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_83
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
+        x: 128
+        y: 81
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -3, y: 2}
-        - {x: -8, y: 0}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 2}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_84
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 144
+        y: 81
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 3}
-        - {x: -8, y: -2}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 1}
-        - {x: 5, y: 3}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_85
       rect:
         serializedVersion: 2
-        x: 80
-        y: 64
+        x: 0
+        y: 65
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 3}
-        - {x: -8, y: 2}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 2}
-        - {x: 4, y: 3}
+      outline: []
       tessellationDetail: 0
     - serializedVersion: 2
       name: Xbox one_86
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 16
+        y: 65
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 2}
-        - {x: -8, y: 2}
-        - {x: -8, y: -8}
-        - {x: 7, y: -8}
-        - {x: 8, y: -7}
-        - {x: 8, y: 1}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Xbox one_87
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Xbox one_88
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Xbox one_89
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Xbox one_90
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 65
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
