@@ -5,29 +5,41 @@ using UnityEngine.Sprites;
 
 public class CollectibleManager : MonoBehaviour {
 
+
+	public GameObject playerChar;
+	public Sprite beer;
+	public Sprite cocktail;
+
 	// Use this for initialization
 	void Start () {
+
+		if (this.gameObject.tag == "Beer Collectible") {
+			this.GetComponent<SpriteRenderer> ().sprite = beer;
+		}
+		else if (this.gameObject.tag == "Cocktail Collectible") {
+			this.GetComponent<SpriteRenderer> ().sprite = cocktail;
+		}
+
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//beerCollectible ();
+		
 	}
 
     void OnTriggerEnter2D(Collider2D col)
     {
-		Debug.Log ("HI");
         if (col.gameObject.name == "Player")
         {
-			if (this.GetComponent<GameObject>().tag == "Beer Collectible")
+			if (this.gameObject.tag == "Beer Collectible")
             {
                 beerCollectible();
             }
 
-			if (this.GetComponent<GameObject>().tag == "Cocktail Collectible")
+			if (this.gameObject.tag == "Cocktail Collectible")
             {
-                beerCollectible();
+                cocktailCollectible();
             }
         }
         else
@@ -38,12 +50,12 @@ public class CollectibleManager : MonoBehaviour {
 
     void beerCollectible()
     {
-        this.GetComponent<SpriteRenderer>().color = Color.red;
+		playerChar.GetComponent<PlayerController> ().drunknessLevel += 5.0f;
     }
 
     void cocktailCollectible()
     {
-        this.GetComponent<SpriteRenderer>().color = Color.blue;
+		playerChar.GetComponent<PlayerController> ().drunknessLevel += 10.0f;
     }
 
 };

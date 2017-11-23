@@ -29,11 +29,13 @@ class Inputs
 public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
-	int playerNumber = 0;
+	public int playerNumber = 0;
+
+    public bool alive = true;
 
 	[SerializeField]
 	[Range(0.0f, 45.0f)]
-	float drunknessLevel;
+	public float drunknessLevel;
 
 	List<Inputs> inputs;
 
@@ -98,6 +100,8 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        if (!alive)
+            return;
 		recordInput ();
 
 		jumpTime += Time.deltaTime;
