@@ -16,12 +16,15 @@ public class ScrollingBackground : MonoBehaviour {
 
 	public float parallaxSpeed;
 	private float lastCameraX;
+	public GameObject foregroundObject1;
+	public GameObject foregroundObject2;
+	public GameObject foregroundObject3;
+	private Vector2 foregroundPos;
 
 
 
 	private void Start()
 	{
-		
 		cameraTransform = Camera.main.transform;
 		lastCameraX = cameraTransform.position.x;
 		layers = new Transform[transform.childCount];
@@ -45,14 +48,19 @@ public class ScrollingBackground : MonoBehaviour {
 
 		if (scrolling) 
 		{
-			if (cameraTransform.position.x < (layers [leftIndex].transform.position.x + viewZone)) { //If camera position is less than the left most image, scroll left
+			if (cameraTransform.position.x < (layers [leftIndex].transform.position.x + viewZone)) {//If camera position is less than the left most image, scroll left
 				ScrollLeft ();
+				//foregroundObject1.transform.position = foregroundPos;
 			}
 
 			if (cameraTransform.position.x > (layers [rightIndex].transform.position.x - viewZone)) { //If camera position is more than the right most image, scroll right
 				ScrollRight ();
 			}
 		}
+
+		//foregroundObject1.transform.position = foregroundPos;
+		//foregroundObject2.transform.position = foregroundPos;
+		//foregroundObject3.transform.position = foregroundPos;
 	}
 
 	private void ScrollLeft()
@@ -77,6 +85,7 @@ public class ScrollingBackground : MonoBehaviour {
 		{
 			leftIndex = 0;
 		}
+		//layers[leftIndex]
 
 	}
 }
