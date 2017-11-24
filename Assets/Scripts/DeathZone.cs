@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	void OnTriggerEntry(Collider other)
+	{
+		if (other.tag == "Player")
+		{
+			other.GetComponent<PlayerController> ().alive = false;
+		}
 	}
 }

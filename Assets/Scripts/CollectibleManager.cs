@@ -47,6 +47,8 @@ public class CollectibleManager : MonoBehaviour {
             {
 				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 10.0f);
             }
+
+			Destroy (gameObject);
         }
         else
         {
