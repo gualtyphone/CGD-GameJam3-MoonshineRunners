@@ -7,7 +7,7 @@ using UnityEngine;
 public class CameraPathCamera : MonoBehaviour {
     //List<GameObject> nodes;
 	[SerializeField]
-	CameraPathNode currentNode;
+	public CameraPathNode currentNode;
 	[SerializeField]
 	float speedMultiplier = 3;
 	[SerializeField]
