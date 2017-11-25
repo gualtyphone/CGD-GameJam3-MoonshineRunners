@@ -37,7 +37,12 @@ public class PlayerController : MonoBehaviour {
 	[Range(0.0f, 45.0f)]
 	public float drunknessLevel;
 
-	List<Inputs> inputs;
+    public int beerCount;
+    public int cocktailCount;
+    public int score;
+    public float alcoholLevel;
+
+    List<Inputs> inputs;
 
     [SerializeField]
     Vector2 velocity;

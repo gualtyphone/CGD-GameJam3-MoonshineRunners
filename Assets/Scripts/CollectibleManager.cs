@@ -17,6 +17,9 @@ public class CollectibleManager : MonoBehaviour {
 	public Sprite beer;
 	public Sprite cocktail;
 
+    public ScoreManager score;
+    public float alcoholLevel;
+
 	// Use this for initialization
 	void Start () {
 
@@ -40,12 +43,17 @@ public class CollectibleManager : MonoBehaviour {
         {
 			if (type == CollectibleType.Beer)
             {
+                
 				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 5.0f);
+                score.addDrink(col.GetComponent<PlayerController>(), "Beer");
             }
 
 			if (type == CollectibleType.Cocktail)
             {
-				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 10.0f);
+               
+                IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 10.0f);
+                score.addDrink(col.GetComponent<PlayerController>(), "Cocktail");
+
             }
 
 			Destroy (gameObject);
