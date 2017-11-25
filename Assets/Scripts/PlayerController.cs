@@ -27,11 +27,16 @@ class Inputs
 }
 
 public class PlayerController : MonoBehaviour {
+    [SerializeField]
+    public string jumpSoundName;
+    [SerializeField]
+    public string runSoundName;
 
 	[SerializeField]
 	public int playerNumber = 0;
 
     public bool alive = true;
+    public bool isRunning = false;
 
 	[SerializeField]
 	[Range(0.0f, 45.0f)]
@@ -67,6 +72,8 @@ public class PlayerController : MonoBehaviour {
 	ContactPoint2D[] cps;
 	ContactFilter2D filter;
 
+    private AudioManager audioManager;
+
     // Use this for initialization
     void Awake () {
         rb = GetComponent<Rigidbody2D>();
@@ -74,6 +81,8 @@ public class PlayerController : MonoBehaviour {
 		filter = new ContactFilter2D ();
 		contacts = new List<ContactSides> ();
 		inputs = new List<Inputs> ();
+
+        audioManager = FindObjectOfType<AudioManager>();
 
 		//testing drunkness
 		//drunknessLevel = Random.Range (0.0f, 45.0f);
@@ -122,6 +131,9 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		rb.velocity = velocity;
+
+        isRunning = false;
+
 	}
 
 	void checkContacts()
@@ -186,6 +198,14 @@ public class PlayerController : MonoBehaviour {
     float calculateVerticalAcceleration()
 	{
 		if (motionSate == MotionState.grounded) {
+            if(rb.velocity.magnitude > 0.1)
+            {
+                //if (isRunning == false)
+                //{
+                //    audioManager.PlaySound(runSoundName);
+                //    isRunning = true;
+                //}
+            }
 			if (getDelayedinput((int)(drunknessLevel)).jumpDown) {
 				Jump ();
 			}
@@ -227,6 +247,9 @@ public class PlayerController : MonoBehaviour {
 		motionSate = MotionState.jumping;
 		velocity.y = jumpForce * 2.0f;
 		jumpTime = 0;
+
+        audioManager.PlaySound(jumpSoundName);
+
 	}
 
 	void WallJump()
