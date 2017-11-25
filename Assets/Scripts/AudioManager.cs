@@ -68,25 +68,11 @@ public class AudioManager : MonoBehaviour
 			_go.transform.SetParent (this.transform);
 			sounds [i].setSource (_go.AddComponent<AudioSource>());
 		}
-
-		//PlaySound ("Background Music");
-
 	}
 
 	public void PlaySound(string _name)
 	{
         Sound found = sounds.Find(sound => sound.name == _name);
         found.Play();
-		//for (int i = 0; i < sounds.Length; i++) 
-		//{
-		//	if (sounds [i].name == _name) 
-		//	{
-		//		sounds [i].Play ();
-		//		return;
-		//	}
-		//}
-
-		//error 404 sound not found
-		//Debug.LogWarning ("AudioManager: Sound not found in list: " + _name);
 	}
 }
