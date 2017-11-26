@@ -5,17 +5,16 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
 
-
-    
-   
-
     PlayerController player;
 
     public Text drunkness;
     //public ScoreManager score;
 	// Use this for initialization
 	void Start () {
-        drunkness.text = "";
+        if (drunkness != null)
+        {
+            drunkness.text = "";
+        }
 	}
 	
 	// Update is called once per frame

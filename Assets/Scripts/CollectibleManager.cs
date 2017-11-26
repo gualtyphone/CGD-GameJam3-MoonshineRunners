@@ -30,6 +30,7 @@ public class CollectibleManager : MonoBehaviour {
 			this.GetComponent<SpriteRenderer> ().sprite = cocktail;
 		}
 
+        score = FindObjectOfType<ScoreManager>();
 	}
 	
 	// Update is called once per frame

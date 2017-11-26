@@ -9,7 +9,7 @@ public class CameraPathCamera : MonoBehaviour {
 	[SerializeField]
 	public CameraPathNode currentNode;
 	[SerializeField]
-	float speedMultiplier = 3;
+	float speedMultiplier;
 	[SerializeField]
 	float accelerationDampener = 0.01f; 
 	[SerializeField]
@@ -49,6 +49,7 @@ public class CameraPathCamera : MonoBehaviour {
 
 		Vector3 direction = nextPosition - transform.position;
 		direction.Normalize ();
+        direction.y += nextPosition.y - transform.position.y;
 
 		//Move
 		float speed = speedMultiplier * Time.deltaTime;
