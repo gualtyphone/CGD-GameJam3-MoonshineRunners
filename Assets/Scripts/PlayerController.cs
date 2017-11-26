@@ -28,6 +28,15 @@ class Inputs
 
 public class PlayerController : MonoBehaviour {
 
+    [SerializeField]
+    public string jumpSoundEffect;
+    [SerializeField]
+    public string runSoundEffect;
+    [SerializeField]
+    public string deathSoundEffect;
+    [SerializeField]
+    public string drinkSoundEffect;
+
 	[SerializeField]
 	public int playerNumber = 0;
 
@@ -72,6 +81,8 @@ public class PlayerController : MonoBehaviour {
 	ContactPoint2D[] cps;
 	ContactFilter2D filter;
 
+    private AudioManager audioManager;
+
     // Use this for initialization
     void Awake () {
         rb = GetComponent<Rigidbody2D>();
@@ -79,6 +90,8 @@ public class PlayerController : MonoBehaviour {
 		filter = new ContactFilter2D ();
 		contacts = new List<ContactSides> ();
 		inputs = new List<Inputs> ();
+
+        audioManager = FindObjectOfType<AudioManager>();
 
 		//testing drunkness
 		//drunknessLevel = Random.Range (0.0f, 45.0f);
@@ -174,6 +187,10 @@ public class PlayerController : MonoBehaviour {
 			previousMotionState = motionSate;
 			motionSate = MotionState.falling;
 		}
+        if(motionSate == MotionState.grounded && rb.velocity.magnitude > 1)
+        {
+            audioManager.PlaySound(runSoundEffect);
+        }
 	}
 
 	void  isTouchingWall ()
@@ -232,6 +249,9 @@ public class PlayerController : MonoBehaviour {
 		motionSate = MotionState.jumping;
 		velocity.y = jumpForce * 2.0f;
 		jumpTime = 0;
+
+        audioManager.PlaySound(jumpSoundEffect);
+
 	}
 
 	void WallJump()

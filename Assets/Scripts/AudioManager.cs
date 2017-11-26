@@ -30,9 +30,12 @@ public class Sound {
 	{
 		source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
 		source.pitch = pitch * (1+ Random.Range(-randomPitch / 2f, randomPitch / 2f));
-		source.Play ();
-	}
-
+		
+        if(!source.isPlaying)
+        {
+            source.Play();
+        }
+    }
 }
 
 public class AudioManager : MonoBehaviour 
@@ -62,12 +65,12 @@ public class AudioManager : MonoBehaviour
 
     void Start()
 	{
-		for (int i = 0; i < sounds.Count; i++) 
-		{
-			GameObject _go = new GameObject ("Sound_" + i + "_" + sounds [i].name);
-			_go.transform.SetParent (this.transform);
-			sounds [i].setSource (_go.AddComponent<AudioSource>());
-		}
+        for (int i = 0; i < sounds.Count; i++)
+        {
+            GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
+            _go.transform.SetParent(this.transform);
+            sounds[i].setSource(_go.AddComponent<AudioSource>());
+        }
 	}
 
 	public void PlaySound(string _name)
