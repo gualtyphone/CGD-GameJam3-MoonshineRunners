@@ -51,6 +51,8 @@ public class CollectibleManager : MonoBehaviour {
 			this.GetComponent<SpriteRenderer> ().sprite = bed;
 			gameObject.GetComponent<AudioSource>().clip = bedClip;
 		}
+
+        score = FindObjectOfType<ScoreManager>();
 	}
 	
 	// Update is called once per frame
