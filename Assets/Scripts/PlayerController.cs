@@ -118,8 +118,8 @@ public class PlayerController : MonoBehaviour {
 
 		alcText.gameObject.SetActive (false);
 		alcSlider.maxValue = 45.0f;
-		alcSlider.minValue = 1.0f;
-		drunknessLevel = 1.0f;
+		alcSlider.minValue = 0.0f;
+		drunknessLevel = 0.0f;
 	}
 
 	Inputs getDelayedinput(int framesDelay = 0)
@@ -150,6 +150,7 @@ public class PlayerController : MonoBehaviour {
 		checkContacts ();
 		isGrounded ();
 		isTouchingWall ();
+		checkDrunkenessLevel();
 
 		acceleration = new Vector2 (getDelayedinput((int)(drunknessLevel)).axes.x, 0) * moveForce;
 		acceleration.y = calculateVerticalAcceleration ();
@@ -164,10 +165,7 @@ public class PlayerController : MonoBehaviour {
 
 		rb.velocity = velocity;
 
-		//alcSlider.maxValue;//drunknessLevel / 45.0f;
 		alcSlider.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
-
-		checkDrunkenessLevel();
 
 		alcSlider.value = (drunknessLevel / alcSlider.maxValue) * 100;
 	}

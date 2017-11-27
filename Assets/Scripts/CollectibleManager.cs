@@ -52,7 +52,7 @@ public class CollectibleManager : MonoBehaviour {
 			gameObject.GetComponent<AudioSource>().clip = bedClip;
 		}
 
-        score = FindObjectOfType<ScoreManager>();
+       // score = FindObjectOfType<ScoreManager>();
 	}
 	
 	// Update is called once per frame
