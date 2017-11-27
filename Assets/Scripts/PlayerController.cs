@@ -93,8 +93,11 @@ public class PlayerController : MonoBehaviour {
 
     private AudioManager audioManager;
 
+	Animator anim;
+
     // Use this for initialization
     void Awake () {
+		anim = GetComponent<Animator> ();
         rb = GetComponent<Rigidbody2D>();
 		cps = new ContactPoint2D[20];
 		filter = new ContactFilter2D ();
@@ -170,6 +173,42 @@ public class PlayerController : MonoBehaviour {
 		checkDrunkenessLevel();
 
 		alcSlider.value = (drunknessLevel / alcSlider.maxValue) * 100;
+
+		changeAnimation ();
+
+	}
+
+	void changeAnimation()
+	{
+		switch (motionSate) {
+		case MotionState.falling:
+			anim.SetTrigger ("Falling");
+			break;
+		case MotionState.grounded:
+			if (rb.velocity.magnitude > 0.3f) {
+				anim.SetTrigger ("Running");
+
+			} else {
+
+				anim.SetTrigger ("Idle");
+			}
+			break;
+		case MotionState.jumping:
+			anim.SetTrigger ("Jumping");
+
+			break;
+		case MotionState.wallSliding:
+		case MotionState.wallTouching:
+			if (contacts.Contains (ContactSides.wallLeft)) {
+				anim.SetTrigger ("WallLeft");
+
+			} else {
+
+				anim.SetTrigger ("WallRight");
+			}
+
+			break;
+		}
 	}
 
 	void checkContacts()
@@ -202,6 +241,7 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 	}
+
 	void isGrounded ()
 	{
 		LayerMask mask = new LayerMask ();
@@ -210,6 +250,7 @@ public class PlayerController : MonoBehaviour {
 		if (contacts.Contains(ContactSides.ground) && motionSate == MotionState.falling) {
 			motionSate = MotionState.grounded;
 			previousMotionState = MotionState.falling;
+			changeAnimation ();
 			doubleJump = false;
 		}
 
@@ -231,6 +272,8 @@ public class PlayerController : MonoBehaviour {
 		if ((contacts.Contains(ContactSides.wallLeft) || contacts.Contains(ContactSides.wallRight)) && motionSate == MotionState.falling) {
 			previousMotionState = motionSate;
 			motionSate = MotionState.wallTouching;
+			changeAnimation ();
+
 			doubleJump = false;
 		}
 	}
@@ -248,6 +291,8 @@ public class PlayerController : MonoBehaviour {
 			}
 			if (contacts.Contains (ContactSides.ceiling)) {
 				motionSate = MotionState.falling;
+				changeAnimation ();
+
 				velocity.y = 0.0f;
 			}
 			if (motionSate == MotionState.jumping) {
@@ -256,6 +301,8 @@ public class PlayerController : MonoBehaviour {
 				} else {
 					previousMotionState = motionSate;
 					motionSate = MotionState.falling;
+					changeAnimation ();
+
 				}
 			}
 			if (motionSate == MotionState.falling) {
@@ -267,6 +314,7 @@ public class PlayerController : MonoBehaviour {
 			}
 			if (!contacts.Contains (ContactSides.wallLeft) && !contacts.Contains (ContactSides.wallRight)) {
 				previousMotionState = motionSate;
+				changeAnimation ();
 				motionSate = MotionState.falling;
 			}
 		}
@@ -279,6 +327,7 @@ public class PlayerController : MonoBehaviour {
 		motionSate = MotionState.jumping;
 		velocity.y = jumpForce * 2.0f;
 		jumpTime = 0;
+		changeAnimation ();
 
         audioManager.PlaySound(jumpSoundEffect);
 
@@ -293,6 +342,7 @@ public class PlayerController : MonoBehaviour {
 			velocity.x = jumpForce;
 		if (contacts.Contains(ContactSides.wallRight))
 			velocity.x = -jumpForce;
+		changeAnimation ();
 
 		velocity.Normalize ();
 		velocity *= jumpForce *2;

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
     PlayersJoined pj;
 
     [SerializeField]
-    GameObject playerPrefab;
+    GameObject[] playerPrefabs;
 
 	List<PlayerController> players;
 
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
 
         foreach (int playerID in pj.playersReady)
         {
-			players.Add(Instantiate(playerPrefab, startingPoint.transform.position, Quaternion.identity).GetComponent<PlayerController>());
+			players.Add(Instantiate(playerPrefabs[playerID], startingPoint.transform.position, Quaternion.identity).GetComponent<PlayerController>());
             players[players.Count - 1].playerNumber = playerID;
         }
 
