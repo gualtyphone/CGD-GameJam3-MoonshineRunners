@@ -18,7 +18,7 @@ public class TeleportObj : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		CreateParticleEffect (other.transform.position); 
 		other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y + TeleportUpBy, other.transform.position.z); 
