@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [System.Serializable]
 public class Sound {
@@ -30,17 +31,12 @@ public class Sound {
 	{
 		source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
 		source.pitch = pitch * (1+ Random.Range(-randomPitch / 2f, randomPitch / 2f));
-		
-        if(!source.isPlaying)
-        {
-            source.Play();
-        }
-    }
+		source.Play ();
+	}
 }
 
 public class AudioManager : MonoBehaviour 
 {
-
 	public static AudioManager instance;
 
 	[SerializeField]
@@ -58,27 +54,24 @@ public class AudioManager : MonoBehaviour
         else
         {
             instance = this;
-            //DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this);
         }
 
     }
 
     void Start()
 	{
-        for (int i = 0; i < sounds.Count; i++)
-        {
-            GameObject _go = new GameObject("Sound_" + i + "_" + sounds[i].name);
-            _go.transform.SetParent(this.transform);
-            sounds[i].setSource(_go.AddComponent<AudioSource>());
-        }
+		for (int i = 0; i < sounds.Count; i++) 
+		{
+			GameObject _go = new GameObject ("Sound_" + i + "_" + sounds [i].name);
+			_go.transform.SetParent (this.transform);
+			sounds [i].setSource (_go.AddComponent<AudioSource>());
+		}
 	}
 
 	public void PlaySound(string _name)
 	{
         Sound found = sounds.Find(sound => sound.name == _name);
-        if (found != null)
-        {
-            found.Play();
-        }
+        found.Play();
 	}
 }

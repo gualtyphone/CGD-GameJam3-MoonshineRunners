@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 enum MotionState
 {
@@ -46,10 +47,19 @@ public class PlayerController : MonoBehaviour {
 	[Range(0.0f, 45.0f)]
 	public float drunknessLevel;
 
+	private Canvas alcCanvas;
+	public GameObject alcPrefab;
+
+	public float alcPanelOffset;
+	private GameObject alcPanel;
+	private Slider alcSlider;
+	private Text alcText;
+
     public int beerCount;
     public int cocktailCount;
     public int score;
     public float alcoholLevel;
+	private float timer = 0.0f;
 
     List<Inputs> inputs;
 
@@ -98,6 +108,20 @@ public class PlayerController : MonoBehaviour {
 
 	}
 
+	void Start()
+	{
+		alcPrefab = Instantiate (alcPrefab) as GameObject;
+		alcCanvas = alcPrefab.GetComponentInChildren<Canvas> ();
+		alcText = alcCanvas.GetComponentInChildren<Text> ();
+		alcCanvas.transform.parent = gameObject.transform;
+		alcSlider = alcCanvas.GetComponentInChildren<Slider> ();
+
+		alcText.gameObject.SetActive (false);
+		alcSlider.maxValue = 45.0f;
+		alcSlider.minValue = 1.0f;
+		drunknessLevel = 1.0f;
+	}
+
 	Inputs getDelayedinput(int framesDelay = 0)
 	{
 		return (inputs [Mathf.Max(0, (inputs.Count - 1 - framesDelay))]);
@@ -127,7 +151,6 @@ public class PlayerController : MonoBehaviour {
 		isGrounded ();
 		isTouchingWall ();
 
-
 		acceleration = new Vector2 (getDelayedinput((int)(drunknessLevel)).axes.x, 0) * moveForce;
 		acceleration.y = calculateVerticalAcceleration ();
 
@@ -140,6 +163,13 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		rb.velocity = velocity;
+
+		//alcSlider.maxValue;//drunknessLevel / 45.0f;
+		alcSlider.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
+
+		checkDrunkenessLevel();
+
+		alcSlider.value = (drunknessLevel / alcSlider.maxValue) * 100;
 	}
 
 	void checkContacts()
@@ -267,5 +297,45 @@ public class PlayerController : MonoBehaviour {
 		velocity.Normalize ();
 		velocity *= jumpForce *2;
 		jumpTime = 0;
+	}
+
+	void checkDrunkenessLevel()
+	{
+		//timer += Time.deltaTime;
+
+		if (drunknessLevel > alcSlider.maxValue) 
+		{
+			drunknessLevel = alcSlider.maxValue;
+		}
+
+		if (drunknessLevel < alcSlider.minValue) 
+		{
+			drunknessLevel = alcSlider.minValue;
+		}
+
+		if (drunknessLevel == alcSlider.maxValue)
+		{
+			alcText.gameObject.SetActive (true);
+			StartCoroutine ("FlashText");
+		}
+		else 
+		{
+			StopCoroutine ("FlashText");
+			alcText.gameObject.SetActive (false);
+		}
+	}
+
+	IEnumerator FlashText()
+	{
+		if (alcText.color == Color.red) 
+		{
+			alcText.color = Color.yellow;
+			yield return new WaitForSeconds(2.5f);
+		}
+		else if (alcText.color == Color.yellow)
+		{
+			alcText.color = Color.red;
+			yield return new WaitForSeconds(2.5f);
+		}
 	}
 }
