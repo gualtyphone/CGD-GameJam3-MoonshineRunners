@@ -3,7 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[System.Serializable]
+public class collectedDrinks
+{
+	public collectedDrinks()
+	{
+		drinks = new List<CollectibleType> ();
+	}
+
+    public List<CollectibleType> drinks;
+    public int playerID;
+
+};
+
 public class PlayersJoined : Singleton<PlayersJoined> {
+
+    
 
     [SerializeField]
     List<int> playersJoined;
@@ -13,11 +28,18 @@ public class PlayersJoined : Singleton<PlayersJoined> {
     bool countdownRunning = false;
     Timer timer;
 
+    
+
+
+    public List<collectedDrinks> drinks;
+
+
     // Use this for initialization
     void Awake () {
         DontDestroyOnLoad(gameObject);
         playersJoined = new List<int>();
         playersReady = new List<int>();
+        drinks = new List<collectedDrinks>();
     }
 
     // Update is called once per frame
@@ -72,7 +94,15 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 			foreach (var player in FindObjectsOfType<PlayerJoining> ()) {
 				player.pJ = this;
 			}
+			drinks.Clear ();
 			break;
+       case 3:
+                foreach (var player in playersJoined)
+                {
+                    drinks.Add(new collectedDrinks());
+                    drinks[drinks.Count - 1].playerID = player;
+                }
+            break;
 		}
 	}
 
