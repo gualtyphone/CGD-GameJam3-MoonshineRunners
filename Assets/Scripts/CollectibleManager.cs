@@ -127,6 +127,6 @@ public class CollectibleManager : MonoBehaviour {
 	void createParticles()
 	{
 		Instantiate (collectionParticle, this.transform.position, this.transform.rotation);
-		DestroyImmediate(collectionParticle, true);
+		//Destroy(collectionParticle);
 	}
 };

@@ -44,6 +44,8 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 		} else if (SceneManager.GetActiveScene ().buildIndex == 4) {
 			if (Input.GetButtonDown ("Submit")) {
 				timer = new Timer (3.0f);
+				playersReady.Clear ();
+				playersJoined.Clear ();
 				SceneManager.LoadScene (2);
 			}
 
