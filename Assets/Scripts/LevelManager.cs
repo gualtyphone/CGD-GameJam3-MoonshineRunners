@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour {
 	[SerializeField]
 	GameObject cam;
 
+	[SerializeField]
+	Transform cameraStartPoint;
 
 	// Use this for initialization
 	void Start () {
@@ -45,5 +47,23 @@ public class LevelManager : MonoBehaviour {
 		GameObject go = Instantiate (LevelPartsPrefabs [rand], pos, Quaternion.identity);;
 		currentInstantiatedLevels [currentInstantiatedLevels.Count - 1].GetComponent<CameraPathNode> ().nextNode = go.GetComponent<CameraPathNode> ();
 		return go;
+	}
+
+	public void reset()
+	{
+		foreach (var level in currentInstantiatedLevels) {
+			Destroy (level);
+		}
+
+		currentInstantiatedLevels.Clear ();
+
+		int rand = Random.Range (0, LevelPartsPrefabs.Count);
+		Vector3 pos = transform.position;
+
+		currentInstantiatedLevels.Add(Instantiate (LevelPartsPrefabs [rand], pos, Quaternion.identity));
+		currentInstantiatedLevels.Add (InstantiateNewLevelPart ());
+
+		cam.GetComponent<CameraPathCamera>().currentNode = currentInstantiatedLevels [0].GetComponent<CameraPathNode>();
+		cam.transform.position = cameraStartPoint.position;
 	}
 }

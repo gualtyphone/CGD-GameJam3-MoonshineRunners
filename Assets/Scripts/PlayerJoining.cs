@@ -12,7 +12,7 @@ public class PlayerJoining : MonoBehaviour {
     JoinReadyGo joinPanel;
 
     [SerializeField]
-    PlayersJoined pJ;
+    public PlayersJoined pJ;
 
     // Use this for initialization
     void Start () {
