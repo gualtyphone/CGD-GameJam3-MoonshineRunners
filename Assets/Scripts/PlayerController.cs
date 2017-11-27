@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour {
         if (!alive)
             return;
 		recordInput ();
-
+ 
 		jumpTime += Time.deltaTime;
 		checkContacts ();
 		isGrounded ();
@@ -166,17 +166,18 @@ public class PlayerController : MonoBehaviour {
 			velocity.y = 0.0f;
 		}
 
-        if (rb.velocity.magnitude > 0.11 && motionSate == MotionState.grounded)
+        if (rb.velocity.x > 3 && motionSate == MotionState.grounded)
         {
             anim.SetBool("walkingState", true);
+
         }
 
-        if (rb.velocity.magnitude < 0.1 || motionSate == MotionState.jumping)
+        else if (rb.velocity.magnitude < 1 || motionSate == MotionState.jumping)
         {
-            anim.SetBool("walkingState", false);
+                 anim.SetBool("walkingState", false);
         }
 
-            rb.velocity = velocity;
+        rb.velocity = velocity;
 
 		//alcSlider.maxValue;//drunknessLevel / 45.0f;
 		alcSlider.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
@@ -283,11 +284,12 @@ public class PlayerController : MonoBehaviour {
 		if ((contacts.Contains(ContactSides.wallLeft) || contacts.Contains(ContactSides.wallRight)) && motionSate == MotionState.falling) {
 			previousMotionState = motionSate;
 			motionSate = MotionState.wallTouching;
-			changeAnimation ();
+            anim.SetBool("jumpingState", false);
+            changeAnimation ();
 
 			doubleJump = false;
 		}
-        anim.SetBool("jumpingState", false);
+        
 
         if (contacts.Contains(ContactSides.wallLeft))
         {
@@ -307,11 +309,13 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (motionSate == MotionState.grounded) {
 			if (getDelayedinput((int)(drunknessLevel)).jumpDown) {
-				Jump ();
+                anim.SetBool("jumpingState", true);
+                Jump ();
 			}
 		} else if (motionSate == MotionState.jumping || motionSate == MotionState.falling) {
 			if (getDelayedinput((int)(drunknessLevel)).jumpDown && !doubleJump) {
-				doubleJump = true;
+                anim.SetBool("jumpingState", true);
+                doubleJump = true;
 				Jump ();
 			}
 			if (contacts.Contains (ContactSides.ceiling)) {
@@ -348,7 +352,6 @@ public class PlayerController : MonoBehaviour {
 
 	void Jump()
 	{
-        anim.SetBool("jumpingState", true);
         previousMotionState = motionSate;
 		motionSate = MotionState.jumping;
 		velocity.y = jumpForce * 2.0f;
