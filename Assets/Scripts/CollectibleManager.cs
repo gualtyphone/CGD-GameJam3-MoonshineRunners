@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Sprites;
 
-enum CollectibleType
+public enum CollectibleType
 {
 	Beer,
 	Cocktail,
@@ -68,12 +68,22 @@ public class CollectibleManager : MonoBehaviour {
     {
 		if (col.gameObject.tag == "Player")
         {
+			int playeNumber = col.GetComponent<PlayerController>().playerNumber;
+			FindObjectOfType<PlayersJoined>().drinks.Find(drink => drink.playerID == playeNumber).drinks.Add(type);
+
+			foreach (var drink in FindObjectOfType<PlayersJoined>().drinks) {
+				if (drink.playerID == playeNumber) {
+					drink.drinks.Add(type);
+				}
+			}
+
 			if (type == CollectibleType.Beer)
             {   
 				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 5.0f);
                // score.addDrink(col.GetComponent<PlayerController>(), "Beer");
 				changeParticleColour (Color.red);
                 audioManager.PlaySound(beerSoundEffect);
+                
             }
 
 			else if (type == CollectibleType.Cocktail)
@@ -82,6 +92,7 @@ public class CollectibleManager : MonoBehaviour {
                 //score.addDrink(col.GetComponent<PlayerController>(), "Cocktail");
 				changeParticleColour(Color.cyan);
                 audioManager.PlaySound(cocktailSoundEffect);
+                
             }
 			else if (type == CollectibleType.Food)
 			{   
