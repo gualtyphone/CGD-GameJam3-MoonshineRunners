@@ -62,24 +62,6 @@ public class CameraPathCamera : MonoBehaviour {
 			if (currentNode.nextNode != null) {
 				currentNode = currentNode.nextNode;
 			}
-			/*
-			if (changeDirection) 
-			{
-				if (i == 0)
-					i = nodes.Count - 1;
-				else
-					i--; 	
-				currentNode = nodes[i];
-			}
-			else 
-			{
-				if (i >= nodes.Count - 1)
-					i = 0; 
-				else
-					i++; 	
-				currentNode = nodes[i];
-			}
-			*/
 		}
     }
 

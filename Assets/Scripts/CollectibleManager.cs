@@ -13,6 +13,8 @@ enum CollectibleType
 
 public class CollectibleManager : MonoBehaviour {
 
+    private AudioManager audioManager;
+
 	[SerializeField]
 	CollectibleType type;
 
@@ -24,44 +26,46 @@ public class CollectibleManager : MonoBehaviour {
     public ScoreManager score;
     public float alcoholLevel;
 	public GameObject collectionParticle;
+    [SerializeField]
+    public string beerSoundEffect;
+    [SerializeField]
+    public string cocktailSoundEffect;
+    [SerializeField]
+    public string foodSoundEffect;
+    [SerializeField]
+    public string bedSoundEffect;
 
-	public Sound cSounds;
-	public AudioClip beerClip;
-	public AudioClip cocktailClip;
-	public AudioClip foodClip;
-	public AudioClip bedClip;
 
 	// Use this for initialization
-	void Start () {
-		cSounds = new Sound ();
-
+	void Start ()
+    {
 		if (type == CollectibleType.Beer) {
-			this.GetComponent<SpriteRenderer> ().sprite = beer;
-			gameObject.GetComponent<AudioSource>().clip = beerClip;
+            this.GetComponent<SpriteRenderer>().sprite = beer;
 		}
 		else if (type == CollectibleType.Cocktail) {
 			this.GetComponent<SpriteRenderer> ().sprite = cocktail;
-			gameObject.GetComponent<AudioSource>().clip = cocktailClip;
 		}
 		else if (type == CollectibleType.Food) {
 			this.GetComponent<SpriteRenderer> ().sprite = pizza;
-			gameObject.GetComponent<AudioSource>().clip = foodClip;
 		}
 		else if (type == CollectibleType.Bed) {
 			this.GetComponent<SpriteRenderer> ().sprite = bed;
-			gameObject.GetComponent<AudioSource>().clip = bedClip;
 		}
 
        // score = FindObjectOfType<ScoreManager>();
 	}
-	
+
+    void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
 	// Update is called once per frame
 	void Update () {
 	}
 
     void OnTriggerEnter2D(Collider2D col)
     {
-		cSounds.setSource (gameObject.GetComponent<AudioSource>());
 		if (col.gameObject.tag == "Player")
         {
 			if (type == CollectibleType.Beer)
@@ -69,6 +73,7 @@ public class CollectibleManager : MonoBehaviour {
 				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 5.0f);
                // score.addDrink(col.GetComponent<PlayerController>(), "Beer");
 				changeParticleColour (Color.red);
+                audioManager.PlaySound(beerSoundEffect);
             }
 
 			else if (type == CollectibleType.Cocktail)
@@ -76,19 +81,21 @@ public class CollectibleManager : MonoBehaviour {
                 IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 12.0f);
                 //score.addDrink(col.GetComponent<PlayerController>(), "Cocktail");
 				changeParticleColour(Color.cyan);
+                audioManager.PlaySound(cocktailSoundEffect);
             }
 			else if (type == CollectibleType.Food)
 			{   
 				DecreasePlayerDrunkness(col.GetComponent<PlayerController>(), 10.0f);
 				changeParticleColour(Color.green);
-			}
+                audioManager.PlaySound(foodSoundEffect);
+            }
 
 			else if (type == CollectibleType.Bed)
 			{
 				DecreasePlayerDrunkness(col.GetComponent<PlayerController>(), 30.0f);
 				changeParticleColour(Color.magenta);
-			}
-			cSounds.Play ();
+                audioManager.PlaySound(bedSoundEffect);
+            }
 			createParticles ();
 			gameObject.SetActive (false);
 			Destroy (gameObject);
