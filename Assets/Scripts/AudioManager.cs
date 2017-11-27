@@ -15,9 +15,9 @@ public class Sound {
 	public float pitch = 1f;
 
 	[Range(0f, 0.5f)]
-	public float randomVolume = 0.1f;
+	public float randomVolume = 0.2f;
 	[Range(0f, 0.5f)]
-	public float randomPitch = 0.1f;
+	public float randomPitch = 0.3f;
 
 	private AudioSource source;
 
@@ -30,7 +30,7 @@ public class Sound {
 	public void Play ()
 	{
 		source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
-		source.pitch = pitch * (1+ Random.Range(-randomPitch / 2f, randomPitch / 2f));
+		source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomPitch / 2f));
 		source.Play ();
 	}
 }
