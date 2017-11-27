@@ -91,6 +91,8 @@ public class PlayerController : MonoBehaviour {
 	ContactPoint2D[] cps;
 	ContactFilter2D filter;
 
+    private Animator anim;
+
     private AudioManager audioManager;
 
 	Animator anim;
@@ -103,6 +105,7 @@ public class PlayerController : MonoBehaviour {
 		filter = new ContactFilter2D ();
 		contacts = new List<ContactSides> ();
 		inputs = new List<Inputs> ();
+        anim = GetComponent<Animator>();
 
         audioManager = FindObjectOfType<AudioManager>();
 
@@ -165,7 +168,17 @@ public class PlayerController : MonoBehaviour {
 			velocity.y = 0.0f;
 		}
 
-		rb.velocity = velocity;
+        if (rb.velocity.magnitude > 0.11 && motionSate == MotionState.grounded)
+        {
+            anim.SetBool("walkingState", true);
+        }
+
+        if (rb.velocity.magnitude < 0.1 || motionSate == MotionState.jumping)
+        {
+            anim.SetBool("walkingState", false);
+        }
+
+            rb.velocity = velocity;
 
 		//alcSlider.maxValue;//drunknessLevel / 45.0f;
 		alcSlider.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
@@ -180,35 +193,35 @@ public class PlayerController : MonoBehaviour {
 
 	void changeAnimation()
 	{
-		switch (motionSate) {
-		case MotionState.falling:
-			anim.SetTrigger ("Falling");
-			break;
-		case MotionState.grounded:
-			if (rb.velocity.magnitude > 0.3f) {
-				anim.SetTrigger ("Running");
+		//switch (motionSate) {
+		//case MotionState.falling:
+		//	anim.SetTrigger ("Falling");
+		//	break;
+		//case MotionState.grounded:
+		//	if (rb.velocity.magnitude > 0.3f) {
+		//		anim.SetTrigger ("Running");
 
-			} else {
+		//	} else {
 
-				anim.SetTrigger ("Idle");
-			}
-			break;
-		case MotionState.jumping:
-			anim.SetTrigger ("Jumping");
+		//		anim.SetTrigger ("Idle");
+		//	}
+		//	break;
+		//case MotionState.jumping:
+		//	anim.SetTrigger ("Jumping");
 
-			break;
-		case MotionState.wallSliding:
-		case MotionState.wallTouching:
-			if (contacts.Contains (ContactSides.wallLeft)) {
-				anim.SetTrigger ("WallLeft");
+		//	break;
+		//case MotionState.wallSliding:
+		//case MotionState.wallTouching:
+		//	if (contacts.Contains (ContactSides.wallLeft)) {
+		//		anim.SetTrigger ("WallLeft");
 
-			} else {
+		//	} else {
 
-				anim.SetTrigger ("WallRight");
-			}
+		//		anim.SetTrigger ("WallRight");
+		//	}
 
-			break;
-		}
+		//	break;
+		//}
 	}
 
 	void checkContacts()
@@ -249,8 +262,8 @@ public class PlayerController : MonoBehaviour {
 		filter.SetLayerMask (mask);
 		if (contacts.Contains(ContactSides.ground) && motionSate == MotionState.falling) {
 			motionSate = MotionState.grounded;
-			previousMotionState = MotionState.falling;
-			changeAnimation ();
+            anim.SetBool("jumpingState", false);
+            previousMotionState = MotionState.falling;
 			doubleJump = false;
 		}
 
@@ -276,7 +289,21 @@ public class PlayerController : MonoBehaviour {
 
 			doubleJump = false;
 		}
-	}
+        anim.SetBool("jumpingState", false);
+
+        if (contacts.Contains(ContactSides.wallLeft))
+        {
+            anim.SetBool("leftWall", true);
+        }
+        else anim.SetBool("leftWall", false);
+
+        if (contacts.Contains(ContactSides.wallRight))
+        {
+            anim.SetBool("rightWall", true);
+        }
+        else anim.SetBool("rightWall", false);
+
+    }
 
     float calculateVerticalAcceleration()
 	{
@@ -323,7 +350,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Jump()
 	{
-		previousMotionState = motionSate;
+        anim.SetBool("jumpingState", true);
+        previousMotionState = motionSate;
 		motionSate = MotionState.jumping;
 		velocity.y = jumpForce * 2.0f;
 		jumpTime = 0;
@@ -335,7 +363,8 @@ public class PlayerController : MonoBehaviour {
 
 	void WallJump()
 	{
-		previousMotionState = motionSate;
+        anim.SetBool("jumpingState", true);
+        previousMotionState = motionSate;
 		motionSate = MotionState.jumping;
 		velocity.y = jumpForce * 2.0f;
 		if (contacts.Contains(ContactSides.wallLeft))
