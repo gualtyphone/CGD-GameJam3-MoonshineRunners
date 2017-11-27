@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [System.Serializable]
 public class Sound {
@@ -32,12 +33,10 @@ public class Sound {
 		source.pitch = pitch * (1+ Random.Range(-randomPitch / 2f, randomPitch / 2f));
 		source.Play ();
 	}
-
 }
 
 public class AudioManager : MonoBehaviour 
 {
-
 	public static AudioManager instance;
 
 	[SerializeField]
