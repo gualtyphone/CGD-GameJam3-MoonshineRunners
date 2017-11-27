@@ -72,6 +72,9 @@ public class AudioManager : MonoBehaviour
 	public void PlaySound(string _name)
 	{
         Sound found = sounds.Find(sound => sound.name == _name);
-        found.Play();
+		if (found != null) {
+			
+			found.Play ();
+		}
 	}
 }
