@@ -171,14 +171,35 @@ public class PlayerController : MonoBehaviour {
 
         }
 
+
         else if (rb.velocity.magnitude < 1 || motionSate == MotionState.jumping)
         {
                  anim.SetBool("walkingState", false);
         }
 
+
+        if (motionSate == MotionState.jumping)
+        {
+            anim.SetBool("jumpingState", true);
+            Debug.Log("Jump still jumping");
+        }
+        else
+            anim.SetBool("jumpingState", false);
+
         rb.velocity = velocity;
 
-		alcSlider.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
+        //if (motionSate == MotionState.falling && previousMotionState == MotionState.jumping)
+        //{
+        //    Debug.Log("FallingEnabled");
+        //    anim.SetBool("fallState", true);
+        //}
+        //else if (motionSate == MotionState.grounded /*&& previousMotionState == MotionState.grounded || motionSate == MotionState.wallSliding || motionSate == MotionState.wallTouching*/)
+        //{
+        //    Debug.Log("FallingDisabled");
+        //    anim.SetBool("fallState", false);
+        //}
+
+        alcSlider.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
 
 		alcSlider.value = (drunknessLevel / alcSlider.maxValue) * 100;
 
@@ -257,14 +278,17 @@ public class PlayerController : MonoBehaviour {
 		filter.SetLayerMask (mask);
 		if (contacts.Contains(ContactSides.ground) && motionSate == MotionState.falling) {
 			motionSate = MotionState.grounded;
-            anim.SetBool("jumpingState", false);
+            Debug.Log("Colliding with ground");
+            anim.SetBool("fallState", false);
             previousMotionState = MotionState.falling;
-			doubleJump = false;
+            doubleJump = false;
 		}
 
-		if (!contacts.Contains (ContactSides.ground) && motionSate == MotionState.grounded) {
+		if (!contacts.Contains (ContactSides.ground) && (motionSate == MotionState.grounded || motionSate == MotionState.jumping)) {
 			previousMotionState = motionSate;
 			motionSate = MotionState.falling;
+            Debug.Log("falling");
+            anim.SetBool("fallState", true);
 		}
         if(motionSate == MotionState.grounded && rb.velocity.magnitude > 1)
         {
@@ -280,7 +304,7 @@ public class PlayerController : MonoBehaviour {
 		if ((contacts.Contains(ContactSides.wallLeft) || contacts.Contains(ContactSides.wallRight)) && motionSate == MotionState.falling) {
 			previousMotionState = motionSate;
 			motionSate = MotionState.wallTouching;
-            anim.SetBool("jumpingState", false);
+            //anim.SetBool("jumpingState", false);
             changeAnimation ();
 
 			doubleJump = false;
@@ -305,12 +329,12 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (motionSate == MotionState.grounded) {
 			if (getDelayedinput((int)(drunknessLevel)).jumpDown) {
-                anim.SetBool("jumpingState", true);
+                //anim.SetBool("jumpingState", true);
                 Jump ();
 			}
 		} else if (motionSate == MotionState.jumping || motionSate == MotionState.falling) {
 			if (getDelayedinput((int)(drunknessLevel)).jumpDown && !doubleJump) {
-                anim.SetBool("jumpingState", true);
+                //anim.SetBool("jumpingState", true);
                 doubleJump = true;
 				Jump ();
 			}
@@ -360,7 +384,7 @@ public class PlayerController : MonoBehaviour {
 
 	void WallJump()
 	{
-        anim.SetBool("jumpingState", true);
+        //anim.SetBool("jumpingState", true);
         previousMotionState = motionSate;
 		motionSate = MotionState.jumping;
 		velocity.y = jumpForce * 2.0f;
