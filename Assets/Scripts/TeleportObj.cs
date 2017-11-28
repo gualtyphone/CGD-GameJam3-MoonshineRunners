@@ -11,9 +11,9 @@ public class TeleportObj : MonoBehaviour {
 	public int TeleportUpBy; 
 
 	// Use this for initialization
-	void Start () 
+	void Awake () 
 	{
-        audioManager = FindObjectOfType<AudioManager>();
+		audioManager = FindObjectOfType<AudioManager>();
 	}
 	
 	// Update is called once per frame
@@ -28,8 +28,8 @@ public class TeleportObj : MonoBehaviour {
 		other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y + TeleportUpBy, other.transform.position.z); 
 		CreateParticleEffect (other.transform.position);
         audioManager.PlaySound(TeleportSoundEffect);
-		//wait
-		wait(); 
+        //wait
+        wait(); 
 		Destroy(gameObject); 
 	}
 
