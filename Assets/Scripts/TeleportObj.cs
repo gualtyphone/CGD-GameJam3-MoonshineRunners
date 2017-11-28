@@ -9,6 +9,7 @@ public class TeleportObj : MonoBehaviour {
     public string TeleportSoundEffect;
 	public GameObject ParticleEffect; 
 	public int TeleportUpBy; 
+	public int TeleportBackBy; 
 
 	// Use this for initialization
 	void Awake () 
@@ -25,7 +26,7 @@ public class TeleportObj : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		CreateParticleEffect (other.transform.position); 
-		other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y + TeleportUpBy, other.transform.position.z); 
+		other.transform.position = new Vector3(other.transform.position.x - TeleportBackBy, other.transform.position.y + TeleportUpBy, other.transform.position.z); 
 		CreateParticleEffect (other.transform.position);
         audioManager.PlaySound(TeleportSoundEffect);
         //wait
