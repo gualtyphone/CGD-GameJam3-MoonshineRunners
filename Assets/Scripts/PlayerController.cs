@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 
 	private Canvas alcCanvas;
 	public GameObject alcPrefab;
+	public GameObject bubblesPrefab;
 
 	public float alcPanelOffset;
 	private GameObject alcPanel;
@@ -115,11 +116,14 @@ public class PlayerController : MonoBehaviour {
 	void Start()
 	{
 		alcPrefab = Instantiate (alcPrefab) as GameObject;
+		bubblesPrefab = Instantiate (bubblesPrefab) as GameObject;
+
 		alcCanvas = alcPrefab.GetComponentInChildren<Canvas> ();
 		alcText = alcCanvas.GetComponentInChildren<Text> ();
 		alcCanvas.transform.parent = gameObject.transform;
 		alcSlider = alcCanvas.GetComponentInChildren<Slider> ();
 
+		alcSlider.gameObject.SetActive (false);
 		alcText.gameObject.SetActive (false);
 		drunknessLevel = 0.0f;
 	}
@@ -186,9 +190,9 @@ public class PlayerController : MonoBehaviour {
 
         rb.velocity = velocity;
 
-        alcSlider.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
+        bubblesPrefab.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
 
-		alcSlider.value = (drunknessLevel / 45.0f) * 100;
+		bubblesPrefab.GetComponent<BubbleFrequency> ().Drunkness = (drunknessLevel / 45.0f) * 10.0f;
 
 		changeAnimation ();
 
