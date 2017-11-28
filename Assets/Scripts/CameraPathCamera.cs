@@ -27,6 +27,12 @@ public class CameraPathCamera : MonoBehaviour {
     [SerializeField]
     float distBetweenPlayers;
 
+    [SerializeField]
+    float maxSpeed;
+
+    [SerializeField]
+    float minSpeed;
+
     GameObject[] players;
     int i = 0; 
     // Use this for initialization
@@ -74,7 +80,7 @@ public class CameraPathCamera : MonoBehaviour {
         }
 
 		//Add Drag to Speed Multiplier
-		if (speedMultiplier > 3) {
+		if (speedMultiplier > minSpeed) {
 			speedMultiplier = speedMultiplier - 0.05f;
 		}
 
@@ -87,7 +93,7 @@ public class CameraPathCamera : MonoBehaviour {
 
 		//Move
 		float speed = speedMultiplier * Time.deltaTime;
-		transform.position += direction * speed;
+		transform.position += direction * Mathf.Min(maxSpeed, speed);
 
 
 		//Did we reach the node?

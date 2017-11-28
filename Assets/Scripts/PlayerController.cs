@@ -192,6 +192,11 @@ public class PlayerController : MonoBehaviour {
 
 		changeAnimation ();
 
+        if (transform.position.y < -0.5f)
+        {
+            alive = false;
+        }
+
 	}
 
 	void changeAnimation()
