@@ -14,24 +14,26 @@ public class CameraPathCamera : MonoBehaviour {
 	float accelerationDampener = 0.01f; 
 	[SerializeField]
 	bool changeDirection = false; 
-
 	[SerializeField]
 	float minY, maxY;
-
     [SerializeField]
     float maxOrthographicSize;
-
     [SerializeField]
     float minOrthographicSize;
-
     [SerializeField]
     float distBetweenPlayers;
-
     [SerializeField]
     float maxSpeed;
-
     [SerializeField]
     float minSpeed;
+    [SerializeField]
+    float drag;
+
+    [SerializeField]
+    float speed;
+
+    [SerializeField]
+    Vector3 direction;
 
     GameObject[] players;
     int i = 0; 
@@ -81,18 +83,18 @@ public class CameraPathCamera : MonoBehaviour {
 
 		//Add Drag to Speed Multiplier
 		if (speedMultiplier > minSpeed) {
-			speedMultiplier = speedMultiplier - 0.05f;
+			speedMultiplier = speedMultiplier - drag;
 		}
 
 		//Desired Next position
 		Vector3 nextPosition = new Vector3(calculateXPos(), calculateYPos(), transform.position.z);
 
-		Vector3 direction = nextPosition - transform.position;
+		direction = nextPosition - transform.position;
 		direction.Normalize ();
         direction.y += (nextPosition.y - transform.position.y)*5;
 
 		//Move
-		float speed = speedMultiplier * Time.deltaTime;
+		speed = speedMultiplier * Time.deltaTime;
 		transform.position += direction * Mathf.Min(maxSpeed, speed);
 
 
@@ -114,27 +116,15 @@ public class CameraPathCamera : MonoBehaviour {
 		averageYpos /= players.Length + 1;
 		averageYpos = Mathf.Min (maxY - GetComponent<Camera>().orthographicSize, Mathf.Max (minY + GetComponent<Camera>().orthographicSize, averageYpos));
 		return (averageYpos);
-		/*
-		 * if (averageYpos > transform.position.y + 1)
-		 * 	pushUp (); 
-		 * if (averageYpos < transform.position.y - 2)
-		 * 	pushDown (); 
-		 */
 	}
 
 	float calculateXPos()
 	{
 		return currentNode.transform.position.x;
-		//		if (transform.position.x > currentNode.transform.position.x)
-		//			transform.position = new Vector3(transform.position.x - speed, transform.position.y, transform.position.z);
-		//		if (transform.position.x < currentNode.transform.position.x)
-		//			transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
-
-
-
-		//        if (transform.position.y > currentNode.transform.position.y)
-		//			transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.z);
-		//        if (transform.position.y < currentNode.transform.position.y)
-		//			transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
 	}
+
+    public void reset()
+    {
+        speedMultiplier = 1.0f;
+    }
 }

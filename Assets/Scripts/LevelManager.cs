@@ -116,6 +116,7 @@ public class LevelManager : MonoBehaviour {
 		currentInstantiatedLevels.Add (InstantiateNewLevelPart ());
 
 		cam.GetComponent<CameraPathCamera>().currentNode = currentInstantiatedLevels [0].node;
-		cam.transform.position = cameraStartPoint.position;
+        cam.GetComponent<CameraPathCamera>().reset();
+        cam.transform.position = cameraStartPoint.position;
 	}
 }
