@@ -60,7 +60,6 @@ public class AudioManager : MonoBehaviour
         if (found != null)
         { 			
 			found.Play ();
-            Debug.Log("no sound");
 		}
 	}
 }
