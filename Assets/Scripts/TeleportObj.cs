@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class TeleportObj : MonoBehaviour {
 
+    private AudioManager audioManager;
+
+    public string TeleportSoundEffect;
 	public GameObject ParticleEffect; 
 	public int TeleportUpBy; 
 	// Use this for initialization
 	void Start () 
 	{
-		
+        audioManager = FindObjectOfType<AudioManager>();
 	}
 	
 	// Update is called once per frame
@@ -22,7 +25,8 @@ public class TeleportObj : MonoBehaviour {
 	{
 		CreateParticleEffect (other.transform.position); 
 		other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y + TeleportUpBy, other.transform.position.z); 
-		CreateParticleEffect (other.transform.position); 
+		CreateParticleEffect (other.transform.position);
+        audioManager.PlaySound(TeleportSoundEffect);
 		//wait
 		wait(); 
 		Destroy(gameObject); 

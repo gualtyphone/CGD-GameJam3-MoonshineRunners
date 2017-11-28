@@ -21,10 +21,15 @@ public class JoinReadyGo : MonoBehaviour {
     public Text playerNumber;
     public Text playerText;
 
+    public string PlayerSelectTune;
+
+    private AudioManager audioManager;
 
     // Use this for initialization
     void Start () {
         setState(JoinState.NotJoined);
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.PlaySound(PlayerSelectTune);
 	}
 
     public void setState(JoinState state)
