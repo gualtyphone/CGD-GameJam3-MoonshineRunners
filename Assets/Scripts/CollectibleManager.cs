@@ -23,6 +23,10 @@ public class CollectibleManager : MonoBehaviour {
 	public Sprite pizza;
 	public Sprite bed;
 
+    private Animator anim;
+
+    private PlayerController playerAnim;
+
     public ScoreManager score;
     public float alcoholLevel;
 	public GameObject collectionParticle;
@@ -32,11 +36,16 @@ public class CollectibleManager : MonoBehaviour {
     public string cocktailSoundEffect;
     [SerializeField]
     public string foodSoundEffect;
+    [SerializeField]
+    public string bedSoundEffect;
 
 
 	// Use this for initialization
 	void Start ()
     {
+        anim = GetComponent<Animator>();
+       //playerAnim = GetComponent<PlayerController>(anim);
+
 		if (type == CollectibleType.Beer) {
             this.GetComponent<SpriteRenderer>().sprite = beer;
 		}
@@ -75,7 +84,9 @@ public class CollectibleManager : MonoBehaviour {
 			}
 
 			if (type == CollectibleType.Beer)
-            {   
+            {
+                
+                col.GetComponent<PlayerController>().anim.SetTrigger("walkDrinkBeer");
 				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 5.0f);
 				changeParticleColour (Color.red);
                 audioManager.PlaySound(beerSoundEffect);
@@ -100,6 +111,7 @@ public class CollectibleManager : MonoBehaviour {
 			{
 				DecreasePlayerDrunkness(col.GetComponent<PlayerController>(), 30.0f);
 				changeParticleColour(Color.magenta);
+                audioManager.PlaySound(bedSoundEffect);
             }
 			createParticles ();
 			gameObject.SetActive (false);
