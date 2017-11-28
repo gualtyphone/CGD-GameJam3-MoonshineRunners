@@ -6,8 +6,8 @@ public class BubbleFrequency : MonoBehaviour {
 
 	ParticleSystem drunkBubbles; 
 	[Range(0, 10)]
-	public int Drunkness = 0; 
-	int lastDrunkness; 
+	public float Drunkness = 0.0f; 
+	float lastDrunkness; 
 	// Use this for initialization
 	void Start () {
 		drunkBubbles = GetComponent<ParticleSystem> (); 
