@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour {
 	ContactPoint2D[] cps;
 	ContactFilter2D filter;
 
-    private Animator anim;
+    public Animator anim;
 
     private AudioManager audioManager;
 
@@ -104,7 +104,6 @@ public class PlayerController : MonoBehaviour {
 		filter = new ContactFilter2D ();
 		contacts = new List<ContactSides> ();
 		inputs = new List<Inputs> ();
-        anim = GetComponent<Animator>();
 
         audioManager = FindObjectOfType<AudioManager>();
 
@@ -121,6 +120,8 @@ public class PlayerController : MonoBehaviour {
 		alcSlider = alcCanvas.GetComponentInChildren<Slider> ();
 
 		alcText.gameObject.SetActive (false);
+		alcSlider.maxValue = 45.0f;
+		alcSlider.minValue = 0.0f;
 		drunknessLevel = 0.0f;
 	}
 
@@ -188,7 +189,7 @@ public class PlayerController : MonoBehaviour {
 
         alcSlider.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
 
-		alcSlider.value = (drunknessLevel / 45.0f) * 100;
+		alcSlider.value = (drunknessLevel / alcSlider.maxValue) * 100;
 
 		changeAnimation ();
 
@@ -397,17 +398,17 @@ public class PlayerController : MonoBehaviour {
 	{
 		//timer += Time.deltaTime;
 
-		if (drunknessLevel > 45.0f) 
+		if (drunknessLevel > alcSlider.maxValue) 
 		{
-			drunknessLevel = 45.0f;
+			drunknessLevel = alcSlider.maxValue;
 		}
 
-		if (drunknessLevel < 0.0f) 
+		if (drunknessLevel < alcSlider.minValue) 
 		{
-			drunknessLevel = 0.0f;
+			drunknessLevel = alcSlider.minValue;
 		}
 
-		if (drunknessLevel >= 45.0f)
+		if (drunknessLevel >= alcSlider.maxValue)
 		{
 			alcText.gameObject.SetActive (true);
 			StartCoroutine ("FlashText");

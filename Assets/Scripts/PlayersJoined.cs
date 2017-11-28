@@ -54,13 +54,15 @@ public class PlayersJoined : Singleton<PlayersJoined> {
     // Use this for initialization
     void Awake () {
         DontDestroyOnLoad(gameObject);
+
         playersJoined = new List<int>();
         playersReady = new List<int>();
         drinks = new List<collectedDrinks>();
 
 		sortedList = new List<collectedDrinks> ();
 
-
+		//Application.LoadLevel (4);
+		//OnLevelWasLoaded(4);
     }
 
     // Update is called once per frame
@@ -107,7 +109,7 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 				if (playersJoined.Contains (card.playerID)) {
 
 					if (drinks.Find (dr => dr.playerID == card.playerID).drinksObtained.Count > 0) {
-						pos.x = -150.0f;
+						pos.x = -180.0f;
 						float space;
 
 					
@@ -117,7 +119,7 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 
 							GameObject clone = Instantiate (drinkPrefab, Vector3.zero, Quaternion.identity, card.transform);
 							clone.transform.localPosition = pos;
-							pos.x += space - 20.0f;
+							pos.x += space - space/drinks.Find (dr => dr.playerID == card.playerID).drinksObtained.Count;
 							if (drinks.Find (dr => dr.playerID == card.playerID).drinksObtained.Count > 6) {
 								clone.GetComponent<RectTransform> ().sizeDelta = new Vector2 (space, space);
 
@@ -148,22 +150,20 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 
 							}
 						}
-						switch (sortedList.FindIndex (i => i.playerID == card.playerID)) {
-						case 0:
-							card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = first;
-							break;
-						case 1:
-							card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = second;
-							break;
-						case 2:
-							card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = third;
-							break;
-						case 3:
-							card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = last;
-							break;
-
-
-						}
+					}
+					switch (sortedList.FindIndex (i => i.playerID == card.playerID)) {
+					case 0:
+						card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = first;
+						break;
+					case 1:
+						card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = second;
+						break;
+					case 2:
+						card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = third;
+						break;
+					case 3:
+						card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = last;
+						break;
 					}
 
 
