@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour {
 	ContactPoint2D[] cps;
 	ContactFilter2D filter;
 
-    public Animator anim;
+	public Animator anim;
 
     private AudioManager audioManager;
 
@@ -105,6 +105,7 @@ public class PlayerController : MonoBehaviour {
 		filter = new ContactFilter2D ();
 		contacts = new List<ContactSides> ();
 		inputs = new List<Inputs> ();
+        anim = GetComponent<Animator>();
 
         audioManager = FindObjectOfType<AudioManager>();
 
@@ -124,8 +125,6 @@ public class PlayerController : MonoBehaviour {
 
 		alcSlider.gameObject.SetActive (false);
 		alcText.gameObject.SetActive (false);
-		alcSlider.maxValue = 45.0f;
-		alcSlider.minValue = 0.0f;
 		drunknessLevel = 0.0f;
 	}
 
@@ -191,6 +190,7 @@ public class PlayerController : MonoBehaviour {
 
         rb.velocity = velocity;
 
+		alcText.transform.position = new Vector3 (gameObject.transform.position.x + 7.0f, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
         bubblesPrefab.transform.position = new Vector3 (gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, gameObject.transform.position.z);
 
 		bubblesPrefab.GetComponent<BubbleFrequency> ().Drunkness = (drunknessLevel / 45.0f) * 10.0f;
@@ -393,26 +393,25 @@ public class PlayerController : MonoBehaviour {
 			velocity.x = -jumpForce * wallJumpStrenght;
 		changeAnimation ();
 
-		velocity.Normalize ();
-		velocity *= jumpForce *2;
+		//velocity.Normalize ();
+		//velocity *= jumpForce *2;
 		jumpTime = 0;
 	}
 
 	void checkDrunkenessLevel()
 	{
-		//timer += Time.deltaTime;
 
-		if (drunknessLevel > alcSlider.maxValue) 
+		if (drunknessLevel > 45.0f) 
 		{
-			drunknessLevel = alcSlider.maxValue;
+			drunknessLevel = 45.0f;
 		}
 
-		if (drunknessLevel < alcSlider.minValue) 
+		if (drunknessLevel < 0.0f) 
 		{
-			drunknessLevel = alcSlider.minValue;
+			drunknessLevel = 0.0f;
 		}
 
-		if (drunknessLevel >= alcSlider.maxValue)
+		if (drunknessLevel >= 45.0f)
 		{
 			alcText.gameObject.SetActive (true);
 			StartCoroutine ("FlashText");
