@@ -172,10 +172,6 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 					card.gameObject.SetActive (false);
 				}
 
-
-
-
-
 			}
 
 
