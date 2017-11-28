@@ -54,7 +54,7 @@ public class CameraPathCamera : MonoBehaviour {
 
         //Increase Speed Multiplier
         foreach (GameObject x in players) {
-			if (x.transform.position.x > transform.position.x + 3) {
+			if (x.transform.position.x > transform.position.x + 3 && speedMultiplier < maxSpeed) {
 				speedMultiplier = speedMultiplier + (x.transform.position.x - transform.position.x) * accelerationDampener;
                 
             }
@@ -95,7 +95,7 @@ public class CameraPathCamera : MonoBehaviour {
 
 		//Move
 		speed = speedMultiplier * Time.deltaTime;
-		transform.position += direction * Mathf.Min(maxSpeed, speed);
+		transform.position += direction *  speed;
 
 
 		//Did we reach the node?
