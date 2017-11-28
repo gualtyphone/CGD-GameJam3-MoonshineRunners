@@ -93,6 +93,9 @@ public class PlayerController : MonoBehaviour {
 
     private AudioManager audioManager;
 
+    [SerializeField]
+    float wallJumpStrenght;
+
     // Use this for initialization
     void Awake () {
 		anim = GetComponent<Animator> ();
@@ -383,9 +386,9 @@ public class PlayerController : MonoBehaviour {
 		motionSate = MotionState.jumping;
 		velocity.y = jumpForce * 2.0f;
 		if (contacts.Contains(ContactSides.wallLeft))
-			velocity.x = jumpForce;
+			velocity.x = jumpForce * wallJumpStrenght;
 		if (contacts.Contains(ContactSides.wallRight))
-			velocity.x = -jumpForce;
+			velocity.x = -jumpForce * wallJumpStrenght;
 		changeAnimation ();
 
 		velocity.Normalize ();

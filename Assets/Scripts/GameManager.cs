@@ -66,9 +66,6 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
-
 		if (players.FindAll (player => player.alive == true).Count <= 1) {
 			NextRound ();
 		}
@@ -92,6 +89,7 @@ public class GameManager : MonoBehaviour {
 
 			//reset Camera;
 			levelManager.reset();
+            
 
 			StartCoroutine (RoundCountdown ());
 		}

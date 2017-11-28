@@ -33,6 +33,8 @@ public class CameraPathCamera : MonoBehaviour {
     [SerializeField]
     float minSpeed;
 
+    [SerializeField]
+    float drag;
     GameObject[] players;
     int i = 0; 
     // Use this for initialization
@@ -81,7 +83,7 @@ public class CameraPathCamera : MonoBehaviour {
 
 		//Add Drag to Speed Multiplier
 		if (speedMultiplier > minSpeed) {
-			speedMultiplier = speedMultiplier - 0.05f;
+			speedMultiplier = speedMultiplier - drag;
 		}
 
 		//Desired Next position
@@ -137,4 +139,9 @@ public class CameraPathCamera : MonoBehaviour {
 		//        if (transform.position.y < currentNode.transform.position.y)
 		//			transform.position = new Vector3(transform.position.x, transform.position.y + speed, transform.position.z);
 	}
+
+    public void reset()
+    {
+        speedMultiplier = 1.0f;
+    }
 }
