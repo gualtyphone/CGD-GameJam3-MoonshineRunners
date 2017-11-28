@@ -80,7 +80,6 @@ public class CollectibleManager : MonoBehaviour {
 			if (type == CollectibleType.Beer)
             {   
 				IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 5.0f);
-               // score.addDrink(col.GetComponent<PlayerController>(), "Beer");
 				changeParticleColour (Color.red);
                 audioManager.PlaySound(beerSoundEffect);
                 
@@ -89,7 +88,6 @@ public class CollectibleManager : MonoBehaviour {
 			else if (type == CollectibleType.Cocktail)
             {
                 IncreasePlayerDrunkness(col.GetComponent<PlayerController>(), 12.0f);
-                //score.addDrink(col.GetComponent<PlayerController>(), "Cocktail");
 				changeParticleColour(Color.cyan);
                 audioManager.PlaySound(cocktailSoundEffect);
                 
@@ -138,6 +136,5 @@ public class CollectibleManager : MonoBehaviour {
 	void createParticles()
 	{
 		Instantiate (collectionParticle, this.transform.position, this.transform.rotation);
-		//Destroy(collectionParticle);
 	}
 };
