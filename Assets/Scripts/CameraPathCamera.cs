@@ -74,7 +74,7 @@ public class CameraPathCamera : MonoBehaviour {
         if (distBetweenPlayers > GetComponent<Camera>().orthographicSize)
         {
             if (GetComponent<Camera>().orthographicSize < maxOrthographicSize)
-                GetComponent<Camera>().orthographicSize *= 1.001f;
+                GetComponent<Camera>().orthographicSize *= 1.1f;
         }
         else if (GetComponent<Camera>().orthographicSize > minOrthographicSize)
         {
