@@ -388,8 +388,8 @@ public class PlayerController : MonoBehaviour {
 			velocity.x = -jumpForce * wallJumpStrenght;
 		changeAnimation ();
 
-		velocity.Normalize ();
-		velocity *= jumpForce *2;
+		//velocity.Normalize ();
+		//velocity *= jumpForce *2;
 		jumpTime = 0;
 	}
 
