@@ -48,6 +48,8 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 
 	public List<collectedDrinks> sortedList;
 
+	public Text CenterText;
+
 	Vector2 pos = new Vector2 (-150.0f, -50.0f);
 	Vector2 size = new Vector2 (100.0f, 100.0f);
 
@@ -81,6 +83,7 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 					//startCountdown
 					countdownRunning = true;
 					timer = new Timer (3.0f);
+					StartCoroutine (RoundCountdownL());
 				}
 				if (timer.Trigger ()) {
 					SceneManager.LoadScene (3);
@@ -224,5 +227,19 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 	public void addScore(int playerNumber)
 	{
 		drinks.Find (i => i.playerID == playerNumber).playerScore++;
+	}
+
+	IEnumerator RoundCountdownL()
+	{
+		//Time.timeScale = 0.0f;
+		//audioManager.PlaySound (countdownSoundEffect);
+		do {
+			CenterText.text = "" + (((int)timer.timeLeft) + 1);
+			yield return new WaitForSecondsRealtime (0.1f);
+		} while (timer.timeLeft > 0.1f && countdownRunning && SceneManager.GetActiveScene().buildIndex == 2);
+
+		CenterText.text = "";
+		yield return null;
+
 	}
 }

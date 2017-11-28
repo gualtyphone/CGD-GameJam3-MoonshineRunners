@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		inputs.Clear ();
 		drunknessLevel = 0.0f;
+		velocity = Vector2.zero;
 	}
 
     // Use this for initialization
