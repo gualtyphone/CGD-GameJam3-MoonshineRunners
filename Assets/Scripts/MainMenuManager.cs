@@ -12,13 +12,14 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
-        audioManager.PlaySound(Tunes);
+
     }
 
 	// Update is called once per frame
 	void Update ()
-    { 
-		if (Input.GetButtonDown("Submit"))
+    {
+        audioManager.PlaySound(Tunes);
+        if (Input.GetButtonDown("Submit"))
         {
             SceneManager.LoadScene(1);
         }

@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     public string deathSoundEffect;
 
+    public string backgroundTune;
+
 	[SerializeField]
 	public int playerNumber = 0;
 
@@ -104,6 +106,8 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
 
         audioManager = FindObjectOfType<AudioManager>();
+
+
 
 		//testing drunkness
 		//drunknessLevel = Random.Range (0.0f, 45.0f);
@@ -183,6 +187,8 @@ public class PlayerController : MonoBehaviour {
 		alcSlider.value = (drunknessLevel / alcSlider.maxValue) * 100;
 
 		changeAnimation ();
+
+        audioManager.PlaySound(backgroundTune);
 
 	}
 

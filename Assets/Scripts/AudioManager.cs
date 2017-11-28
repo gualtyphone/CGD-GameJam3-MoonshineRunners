@@ -21,7 +21,7 @@ public class Sound {
 
 	private AudioSource source;
 
-	public void setSource (AudioSource _source)
+    public void setSource (AudioSource _source)
 	{
 		source = _source;
 		source.clip = clip;
@@ -31,7 +31,10 @@ public class Sound {
 	{
 		source.volume = volume * (1 + Random.Range(-randomVolume / 2f, randomVolume / 2f));
 		source.pitch = pitch * (1 + Random.Range(-randomPitch / 2f, randomPitch / 2f));
-		source.Play ();
+        if (!source.isPlaying)
+        {
+            source.Play();
+        }
 	}
 }
 
@@ -40,7 +43,7 @@ public class AudioManager : MonoBehaviour
 	[SerializeField]
 	List<Sound> sounds;
 
-    void Start()
+    void Awake()
 	{
 		for (int i = 0; i < sounds.Count; i++) 
 		{
@@ -48,26 +51,25 @@ public class AudioManager : MonoBehaviour
 			_go.transform.SetParent (this.transform);
 			sounds [i].setSource (_go.AddComponent<AudioSource>());
 		}
-	}
+    }
 
 	public void PlaySound(string _name)
 	{
         Sound found = sounds.Find(sound => sound.name == _name);
 
-		if (found != null) {
-			
+        if (found != null)
+        { 			
 			found.Play ();
 		}
 	}
 
-    public void PlayLoopSound(string _loopName)
-    {
-        Sound foundLoop = sounds.Find(soundLoop => soundLoop.name == _loopName);
+    //public void PlayLoopSound(string _loopName)
+    //{
+    //    Sound foundLoop = soundsBack.Find(soundLoop => soundLoop.name == _loopName);
 
-        if (foundLoop != null)
-        {
-            foundLoop.Play();
-        }
-
-    }
+    //    if (foundLoop != null)
+    //    {
+    //        foundLoop.Play();
+    //    }
+    //}
 }
