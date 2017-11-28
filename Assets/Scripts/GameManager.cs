@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour {
 		roundNumber++;
 		foreach (var player in players) {
 			if (player.alive) {
-				scoreManager.addScore(player);
+				pj.addScore (player.playerNumber);
 			}
 			player.alive = true;
 
