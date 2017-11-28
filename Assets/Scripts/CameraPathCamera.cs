@@ -71,12 +71,12 @@ public class CameraPathCamera : MonoBehaviour {
         //find distance between players
         distBetweenPlayers = maxPlayerPos - minPlayerPos;
 
-        if (distBetweenPlayers > GetComponent<Camera>().orthographicSize)
+        if (distBetweenPlayers >= GetComponent<Camera>().orthographicSize)
         {
-            if (GetComponent<Camera>().orthographicSize < maxOrthographicSize)
-                GetComponent<Camera>().orthographicSize *= 1.1f;
+			if (GetComponent<Camera> ().orthographicSize < maxOrthographicSize)
+				GetComponent<Camera> ().orthographicSize *= 1.01f;
         }
-        else if (GetComponent<Camera>().orthographicSize > minOrthographicSize)
+		else if (GetComponent<Camera>().orthographicSize > minOrthographicSize && GetComponent<Camera>().orthographicSize * 0.97 > distBetweenPlayers )
         {
             GetComponent<Camera>().orthographicSize *= 0.99f;
         }

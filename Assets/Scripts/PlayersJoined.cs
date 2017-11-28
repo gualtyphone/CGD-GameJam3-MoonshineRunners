@@ -109,7 +109,7 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 				if (playersJoined.Contains (card.playerID)) {
 
 					if (drinks.Find (dr => dr.playerID == card.playerID).drinksObtained.Count > 0) {
-						pos.x = -180.0f;
+						pos.x = -170.0f;
 						float space;
 
 					
