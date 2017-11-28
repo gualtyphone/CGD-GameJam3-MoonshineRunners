@@ -41,7 +41,7 @@ public class Sound {
 public class AudioManager : MonoBehaviour 
 {
 	[SerializeField]
-	List<Sound> sounds;
+	public List<Sound> sounds;
 
     void Awake()
 	{
