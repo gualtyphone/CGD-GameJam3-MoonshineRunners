@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     private AudioManager audioManager;
 
     public string backgroundTune;
+	public string countdownSoundEffect;
 
     [SerializeField]
     GameObject[] playerPrefabs;
@@ -114,6 +115,8 @@ public class GameManager : MonoBehaviour {
 		foreach (var player in players) {
 			player.enabled = false;
 		}
+
+		audioManager.PlaySound (countdownSoundEffect);
 
 		CenterText.text = "3";
 		yield return new WaitForSecondsRealtime (1.0f);

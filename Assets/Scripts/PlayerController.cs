@@ -200,6 +200,7 @@ public class PlayerController : MonoBehaviour {
         if (transform.position.y < -0.5f)
         {
             alive = false;
+			audioManager.PlaySound (deathSoundEffect);
         }
 
 	}
