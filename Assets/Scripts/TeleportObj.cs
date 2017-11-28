@@ -9,6 +9,7 @@ public class TeleportObj : MonoBehaviour {
     public string TeleportSoundEffect;
 	public GameObject ParticleEffect; 
 	public int TeleportUpBy; 
+
 	// Use this for initialization
 	void Start () 
 	{

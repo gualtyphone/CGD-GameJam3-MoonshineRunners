@@ -60,16 +60,7 @@ public class AudioManager : MonoBehaviour
         if (found != null)
         { 			
 			found.Play ();
+            Debug.Log("no sound");
 		}
 	}
-
-    //public void PlayLoopSound(string _loopName)
-    //{
-    //    Sound foundLoop = soundsBack.Find(soundLoop => soundLoop.name == _loopName);
-
-    //    if (foundLoop != null)
-    //    {
-    //        foundLoop.Play();
-    //    }
-    //}
 }

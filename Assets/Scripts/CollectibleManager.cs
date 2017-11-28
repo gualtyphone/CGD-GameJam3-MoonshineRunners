@@ -32,8 +32,6 @@ public class CollectibleManager : MonoBehaviour {
     public string cocktailSoundEffect;
     [SerializeField]
     public string foodSoundEffect;
-    [SerializeField]
-    public string bedSoundEffect;
 
 
 	// Use this for initialization
@@ -103,7 +101,6 @@ public class CollectibleManager : MonoBehaviour {
 			{
 				DecreasePlayerDrunkness(col.GetComponent<PlayerController>(), 30.0f);
 				changeParticleColour(Color.magenta);
-                audioManager.PlaySound(bedSoundEffect);
             }
 			createParticles ();
 			gameObject.SetActive (false);

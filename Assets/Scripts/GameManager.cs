@@ -7,6 +7,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
     PlayersJoined pj;
 
+    private AudioManager audioManager;
+
+    public string backgroundTune;
+
     [SerializeField]
     GameObject[] playerPrefabs;
 
@@ -61,11 +65,16 @@ public class GameManager : MonoBehaviour {
 			player.transform.position = startingPoint.position;
 		}
 
+        audioManager = FindObjectOfType<AudioManager>();
+
 		StartCoroutine (RoundCountdown ());
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        audioManager.PlaySound(backgroundTune);
+
 		if (players.FindAll (player => player.alive == true).Count <= 1) {
 			NextRound ();
 		}
