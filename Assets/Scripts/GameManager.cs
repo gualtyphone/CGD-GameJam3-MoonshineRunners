@@ -97,12 +97,13 @@ public class GameManager : MonoBehaviour {
 			player.transform.position = startingPoint.position;
 			player.GetComponent<Rigidbody2D> ().velocity = new Vector3 ();
 
-			//reset Camera;
-			levelManager.reset();
-            
-
-			StartCoroutine (RoundCountdown ());
+			player.reset();
 		}
+		//reset Camera;
+		levelManager.reset();
+        
+
+		StartCoroutine (RoundCountdown ());
 
 
 	}

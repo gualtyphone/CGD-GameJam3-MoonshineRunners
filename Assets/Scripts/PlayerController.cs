@@ -97,6 +97,13 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     float wallJumpStrenght;
 
+	public void reset()
+	{
+		inputs.Clear ();
+		drunknessLevel = 0.0f;
+		velocity = Vector2.zero;
+	}
+
     // Use this for initialization
     void Awake () {
 		anim = GetComponent<Animator> ();
