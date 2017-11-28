@@ -35,8 +35,6 @@ public class PlayerController : MonoBehaviour {
     public string runSoundEffect;
     [SerializeField]
     public string deathSoundEffect;
-    [SerializeField]
-    public string drinkSoundEffect;
 
 	[SerializeField]
 	public int playerNumber = 0;

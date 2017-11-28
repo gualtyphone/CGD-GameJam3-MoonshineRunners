@@ -37,27 +37,8 @@ public class Sound {
 
 public class AudioManager : MonoBehaviour 
 {
-	public static AudioManager instance;
-
 	[SerializeField]
 	List<Sound> sounds;
-
-    void Awake()
-    {
-        if (instance != null)
-        {
-            if (instance == this)
-            {
-                Destroy(this.gameObject);
-            }
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-
-    }
 
     void Start()
 	{
@@ -72,9 +53,21 @@ public class AudioManager : MonoBehaviour
 	public void PlaySound(string _name)
 	{
         Sound found = sounds.Find(sound => sound.name == _name);
+
 		if (found != null) {
 			
 			found.Play ();
 		}
 	}
+
+    public void PlayLoopSound(string _loopName)
+    {
+        Sound foundLoop = sounds.Find(soundLoop => soundLoop.name == _loopName);
+
+        if (foundLoop != null)
+        {
+            foundLoop.Play();
+        }
+
+    }
 }
