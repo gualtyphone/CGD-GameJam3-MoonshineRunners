@@ -188,6 +188,11 @@ public class PlayerController : MonoBehaviour {
 
 		changeAnimation ();
 
+        if (transform.position.y < 0.0f)
+        {
+            alive = false;
+        }
+
         audioManager.PlaySound(backgroundTune);
 
 	}
