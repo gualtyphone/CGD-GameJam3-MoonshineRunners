@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class collectedDrinks
 {
 	public collectedDrinks()
 	{
-		drinks = new List<CollectibleType> ();
+		drinksObtained = new List<CollectibleType> ();
 	}
 
-    public List<CollectibleType> drinks;
+    public List<CollectibleType> drinksObtained;
     public int playerID;
 
 };
 
 public class PlayersJoined : Singleton<PlayersJoined> {
 
-    
+	[SerializeField]
+	GameObject drinkPrefab;
 
     [SerializeField]
     List<int> playersJoined;
@@ -28,11 +30,16 @@ public class PlayersJoined : Singleton<PlayersJoined> {
     bool countdownRunning = false;
     Timer timer;
 
-    
 
+	public Sprite beer;
+	public Sprite cocktail;
+	public Sprite pizza;
+	public Sprite bed;
 
     public List<collectedDrinks> drinks;
 
+	Vector2 pos = new Vector2 (-150.0f, -50.0f);
+	Vector2 size = new Vector2 (100.0f, 100.0f);
 
     // Use this for initialization
     void Awake () {
@@ -40,6 +47,8 @@ public class PlayersJoined : Singleton<PlayersJoined> {
         playersJoined = new List<int>();
         playersReady = new List<int>();
         drinks = new List<collectedDrinks>();
+
+
     }
 
     // Update is called once per frame
@@ -78,17 +87,66 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 
 	void OnLevelWasLoaded(int level)
 	{
-		switch (level)
-		{
+		switch (level) {
 		case 4:
 			PlayerEndScreenCard[] playerCards = FindObjectsOfType<PlayerEndScreenCard> ();
 			foreach (var card in playerCards) {
 				if (playersJoined.Contains (card.playerID)) {
 
-				} else {
+					if (drinks.Find (dr => dr.playerID == card.playerID).drinksObtained.Count > 0) {
+						pos.x = -150.0f;
+						float space;
+
+					
+						space = 400 / drinks.Find (dr => dr.playerID == card.playerID).drinksObtained.Count;
+
+						foreach (var drink in  drinks.Find(dr => dr.playerID == card.playerID).drinksObtained) {
+
+							GameObject clone = Instantiate (drinkPrefab, Vector3.zero, Quaternion.identity, card.transform);
+							clone.transform.localPosition = pos;
+							pos.x += space - 20.0f;
+							if (drinks.Find (dr => dr.playerID == card.playerID).drinksObtained.Count > 6) {
+								clone.GetComponent<RectTransform> ().sizeDelta = new Vector2 (space, space);
+
+							} 
+						//else if (drinks.Find (dr => dr.playerID == card.playerID).drinksObtained.Count > 10) {
+							//pos.y += space;
+							//pos.x = -150.0f;
+						//} 
+							else {
+								clone.GetComponent<RectTransform> ().sizeDelta = size;
+							}
+							
+
+
+							switch (drink) {
+							case CollectibleType.Beer:
+								clone.GetComponent<Image> ().overrideSprite = beer;
+								break;
+							case CollectibleType.Cocktail:
+								clone.GetComponent<Image> ().overrideSprite = cocktail;
+								break;
+							case CollectibleType.Food:
+								clone.GetComponent<Image> ().overrideSprite = pizza;
+								break;
+							case CollectibleType.Bed:
+								clone.GetComponent<Image> ().overrideSprite = bed;
+								break;
+
+							}
+
+
+						}
+					}
+				}
+				else {
 					card.gameObject.SetActive (false);
 				}
 			}
+
+					
+				
+
 			break;
 		case 2:
 			foreach (var player in FindObjectsOfType<PlayerJoining> ()) {
@@ -104,7 +162,10 @@ public class PlayersJoined : Singleton<PlayersJoined> {
                 }
             break;
 		}
-	}
+		}
+
+	
+
 
     public void join(int playerId)
     {

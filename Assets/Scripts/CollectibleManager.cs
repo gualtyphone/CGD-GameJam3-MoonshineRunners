@@ -69,11 +69,11 @@ public class CollectibleManager : MonoBehaviour {
 		if (col.gameObject.tag == "Player")
         {
 			int playeNumber = col.GetComponent<PlayerController>().playerNumber;
-			FindObjectOfType<PlayersJoined>().drinks.Find(drink => drink.playerID == playeNumber).drinks.Add(type);
+			//FindObjectOfType<PlayersJoined>().drinks.Find(drink => drink.playerID == playeNumber).drinksObtained.Add(type);
 
 			foreach (var drink in FindObjectOfType<PlayersJoined>().drinks) {
 				if (drink.playerID == playeNumber) {
-					drink.drinks.Add(type);
+					drink.drinksObtained.Add(type);
 				}
 			}
 
