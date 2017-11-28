@@ -277,14 +277,14 @@ public class PlayerController : MonoBehaviour {
 		mask.value = 1 << LayerMask.NameToLayer ("Platforms");
 		filter.SetLayerMask (mask);
 		if (contacts.Contains(ContactSides.ground) && motionSate == MotionState.falling) {
-			motionSate = MotionState.grounded;
             Debug.Log("Colliding with ground");
             anim.SetBool("fallState", false);
             previousMotionState = MotionState.falling;
             doubleJump = false;
-		}
+            motionSate = MotionState.grounded;
+        }
 
-		if (!contacts.Contains (ContactSides.ground) && (motionSate == MotionState.grounded || motionSate == MotionState.jumping)) {
+		if (!contacts.Contains (ContactSides.ground) && (motionSate == MotionState.grounded) || motionSate == MotionState.jumping) {
 			previousMotionState = motionSate;
 			motionSate = MotionState.falling;
             Debug.Log("falling");
