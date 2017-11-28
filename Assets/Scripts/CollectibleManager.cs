@@ -51,7 +51,6 @@ public class CollectibleManager : MonoBehaviour {
 		else if (type == CollectibleType.Bed) {
 			this.GetComponent<SpriteRenderer> ().sprite = bed;
 		}
-
        // score = FindObjectOfType<ScoreManager>();
 	}
 
