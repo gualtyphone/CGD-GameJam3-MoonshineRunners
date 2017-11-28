@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Linq;
+
 
 [System.Serializable]
 public class collectedDrinks
@@ -10,11 +12,12 @@ public class collectedDrinks
 	public collectedDrinks()
 	{
 		drinksObtained = new List<CollectibleType> ();
+
 	}
 
     public List<CollectibleType> drinksObtained;
     public int playerID;
-
+	public int playerScore;
 };
 
 public class PlayersJoined : Singleton<PlayersJoined> {
@@ -36,7 +39,14 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 	public Sprite pizza;
 	public Sprite bed;
 
+	public Sprite first;
+	public Sprite second;
+	public Sprite third;
+	public Sprite last;
+
     public List<collectedDrinks> drinks;
+
+	public List<collectedDrinks> sortedList;
 
 	Vector2 pos = new Vector2 (-150.0f, -50.0f);
 	Vector2 size = new Vector2 (100.0f, 100.0f);
@@ -47,6 +57,8 @@ public class PlayersJoined : Singleton<PlayersJoined> {
         playersJoined = new List<int>();
         playersReady = new List<int>();
         drinks = new List<collectedDrinks>();
+
+		sortedList = new List<collectedDrinks> ();
 
 
     }
@@ -89,6 +101,7 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 	{
 		switch (level) {
 		case 4:
+			sortedList = drinks.OrderByDescending (i => i.playerScore).ToList();
 			PlayerEndScreenCard[] playerCards = FindObjectsOfType<PlayerEndScreenCard> ();
 			foreach (var card in playerCards) {
 				if (playersJoined.Contains (card.playerID)) {
@@ -134,17 +147,38 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 								break;
 
 							}
+						}
+						switch (sortedList.FindIndex (i => i.playerID == card.playerID)) {
+						case 0:
+							card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = first;
+							break;
+						case 1:
+							card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = second;
+							break;
+						case 2:
+							card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = third;
+							break;
+						case 3:
+							card.transform.Find ("PlayerMedal").GetComponent<Image> ().overrideSprite = last;
+							break;
 
 
 						}
 					}
+
+
 				}
 				else {
 					card.gameObject.SetActive (false);
 				}
+
+
+
+
+
 			}
 
-					
+
 				
 
 			break;
@@ -191,5 +225,8 @@ public class PlayersJoined : Singleton<PlayersJoined> {
         }
     }
 
-
+	public void addScore(int playerNumber)
+	{
+		drinks.Find (i => i.playerID == playerNumber).playerScore++;
+	}
 }
