@@ -110,7 +110,6 @@ public class PlayerController : MonoBehaviour {
 
 		//testing drunkness
 		//drunknessLevel = Random.Range (0.0f, 45.0f);
-
 	}
 
 	void Start()
@@ -410,7 +409,7 @@ public class PlayerController : MonoBehaviour {
 			drunknessLevel = alcSlider.minValue;
 		}
 
-		if (drunknessLevel == alcSlider.maxValue)
+		if (drunknessLevel >= alcSlider.maxValue)
 		{
 			alcText.gameObject.SetActive (true);
 			StartCoroutine ("FlashText");
