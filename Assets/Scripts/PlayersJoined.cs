@@ -53,6 +53,8 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 	Vector2 pos = new Vector2 (-150.0f, -50.0f);
 	Vector2 size = new Vector2 (100.0f, 100.0f);
 
+	Timer gameOverTimer;
+
     // Use this for initialization
     void Awake () {
         DontDestroyOnLoad(gameObject);
@@ -90,13 +92,14 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 				}
 			}
 		} else if (SceneManager.GetActiveScene ().buildIndex == 4) {
-			if (Input.GetButtonDown ("Submit")) {
-				timer = new Timer (3.0f);
-				playersReady.Clear ();
-				playersJoined.Clear ();
-				SceneManager.LoadScene (2);
+			if (gameOverTimer.timeLeft <= 0.0f) {
+				if (Input.GetButtonDown ("Submit")) {
+					timer = new Timer (3.0f);
+					playersReady.Clear ();
+					playersJoined.Clear ();
+					SceneManager.LoadScene (2);
+				}
 			}
-
 		} else if (SceneManager.GetActiveScene ().buildIndex == 0) {
 			Destroy (gameObject);
 		}
@@ -106,6 +109,7 @@ public class PlayersJoined : Singleton<PlayersJoined> {
 	{
 		switch (level) {
 		case 4:
+			gameOverTimer = new Timer (3.0f);
 			sortedList = drinks.OrderByDescending (i => i.playerScore).ToList();
 			PlayerEndScreenCard[] playerCards = FindObjectsOfType<PlayerEndScreenCard> ();
 			foreach (var card in playerCards) {
